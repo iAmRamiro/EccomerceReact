@@ -1,7 +1,7 @@
-import { Home } from "./components/pages/home/home";
+import { Navbar } from "./components/layout/navbar/Navbar";
 
 function App() {
-  return <Home />;
+  return <Navbar />;
 }
 
 export default App;
