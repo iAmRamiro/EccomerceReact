@@ -24,6 +24,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import LoginIcon from "@mui/icons-material/Login";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
 
 const navLinks = [
   {
@@ -51,6 +52,43 @@ export const Navbar = () => {
   return (
     <>
       <header>
+        <Box
+          sx={{
+            display: { xs: "grid", md: "none" },
+            gridTemplateColumns: "repeat(3,1fr)",
+            textAlign: "center",
+            padding: "10px",
+            lineHeight: "12px",
+            letterSpacing: "1px",
+            backgroundColor: "rgba(0, 0, 0, 0.1)",
+            borderLeft: "1px solid rgba(0,0,0,0.1)",
+            borderRight: "1px solid rgba(0,0,0,0.1)",
+          }}
+        >
+          <Box
+            sx={{
+              borderRight: "1px solid rgba(0,0,0,0.1)",
+            }}
+          >
+            <HomeIcon />
+            <h5>HOME</h5>
+          </Box>
+
+          <Box
+            sx={{
+              borderRight: "1px solid rgba(0,0,0,0.1)",
+            }}
+          >
+            <FormatListBulletedIcon />
+            <h5>PRODUCTOS</h5>
+          </Box>
+
+          <Box>
+            <ShoppingCartIcon color="action" />
+            <h5>CARRITO 4</h5>
+          </Box>
+        </Box>
+
         <p>Envios a todo el pais 🚚</p>
         <Box sx={{ display: "flex" }}>
           <Box
@@ -85,7 +123,7 @@ export const Navbar = () => {
         </Box>
         <Box
           sx={{
-            display: "flex",
+            display: { xs: "none", md: "flex" },
             justifyContent: "flex-end",
             alignItems: "center",
             gap: "3rem",
@@ -94,11 +132,11 @@ export const Navbar = () => {
             cursor: "pointer",
           }}
         >
-          <Box sx={{ display: { xs: "none", md: "block" } }}>
+          <Box>
             <PersonAddIcon />
             <h5>Crear Cuenta</h5>
           </Box>
-          <Box sx={{ display: { xs: "none", md: "block" } }}>
+          <Box>
             <LoginIcon />
             <h5>Inicia session</h5>
           </Box>
