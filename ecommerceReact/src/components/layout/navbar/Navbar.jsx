@@ -25,6 +25,7 @@ import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import LoginIcon from "@mui/icons-material/Login";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
+import SearchBarNav from "./SearchBarNav";
 
 const navLinks = [
   {
@@ -89,7 +90,7 @@ export const Navbar = () => {
           </Box>
         </Box>
 
-        <p>Envios a todo el pais 🚚</p>
+        <p className="envios">Envios a todo el pais 🚚</p>
         <Box sx={{ display: "flex" }}>
           <Box
             item
@@ -208,6 +209,7 @@ export const Navbar = () => {
       >
         <NavListDrawer navlinks={navLinks} />
       </Drawer>
+      <SearchBarNav />
     </>
   );
 };
