@@ -1,12 +1,13 @@
 import { Navbar } from "./components/layout/navbar/Navbar";
 import SliderContainer from "./components/common/Slider/SliderContainer";
-import HomePage from "./components/pages/home/Home";
+import ItemFeaturedContainer from "./components/pages/itemFeatured/ItemFeaturedContainer";
 
 function App() {
   return (
     <>
       <Navbar />
       <SliderContainer />
+      <ItemFeaturedContainer />
     </>
   );
 }
