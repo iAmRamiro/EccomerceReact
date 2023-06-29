@@ -2,8 +2,11 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import ItemFeatured from "./ItemFeatured";
 import ItemsFeatured from "./ItemsFeatured";
-import "./itemFeatured.css";
+import Title from "../../common/title/Title";
+/* import "./itemFeatured.css"; */
 import React from "react";
+import { Container } from "@mui/system";
+import Button from "@mui/material/Button";
 
 const ItemFeaturedContainer = () => {
   const responsive = {
@@ -28,12 +31,15 @@ const ItemFeaturedContainer = () => {
   const product = ItemsFeatured.map((item) => <ItemFeatured item={item} />);
 
   return (
-    <div className="contenedor">
-      <h1 className="title">Productos Destacados</h1>
-      <Carousel showDots={true} responsive={responsive}>
-        {product}
-      </Carousel>
-    </div>
+    <>
+      <Container maxWidth="lg" sx={{ textAlign: "center" }}>
+        <Title titulo={"Productos Destacados"} />
+        <Carousel showDots={true} responsive={responsive}>
+          {product}
+        </Carousel>
+        <Button variant="contained">Ver Todos los Productos</Button>
+      </Container>
+    </>
   );
 };
 

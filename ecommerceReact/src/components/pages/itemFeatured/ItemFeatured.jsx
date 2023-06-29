@@ -1,23 +1,9 @@
 import React from "react";
 import "react-multi-carousel/lib/styles.css";
-import "./itemFeatured.css";
+import ProductCard from "../../common/productCard/ProductCard";
 
 const ItemFeatured = ({ item }) => {
-  return (
-    <>
-      <div style={{ padding: "10px" }}>
-        <div className="card">
-          <img className="product--image" src={item.img} alt="product image" />
-          <h2>{item.title}</h2>
-          <p className="price"> ${item.price}</p>
-          <p>{item.description}</p>
-          <p>
-            <button>Añadir al Carrito</button>
-          </p>
-        </div>
-      </div>
-    </>
-  );
+  return <ProductCard item={item} />;
 };
 
 export default ItemFeatured;
