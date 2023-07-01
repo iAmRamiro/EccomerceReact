@@ -1,14 +1,13 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import ItemFeatured from "./ItemFeatured";
-import ItemsFeatured from "./ItemsFeatured";
+import offersProducts from "./offersProducts";
+import Offers from "./Offers";
+import { Container } from "@mui/material";
 import Title from "../../common/title/Title";
-/* import "./itemFeatured.css"; */
-import React from "react";
-import { Container } from "@mui/system";
-import Button from "@mui/material/Button";
 
-const ItemFeaturedContainer = () => {
+const OffersContainer = () => {
+  console.log(offersProducts);
+
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 1024 },
@@ -28,19 +27,18 @@ const ItemFeaturedContainer = () => {
     },
   };
 
-  const product = ItemsFeatured.map((item) => <ItemFeatured item={item} />);
+  const offerProducts = offersProducts.map((item) => <Offers item={item} />);
 
   return (
     <>
       <Container maxWidth="lg" sx={{ textAlign: "center" }}>
-        <Title titulo={"Productos Destacados"} />
+        <Title titulo={"Ofertas"} />
         <Carousel showDots={true} responsive={responsive} infinite={true}>
-          {product}
+          {offerProducts}
         </Carousel>
-        <Button variant="contained">Ver Todos los Productos</Button>
         <img
-          style={{ width: "1200px", marginTop: "4rem" }}
-          src="https://res.cloudinary.com/dlncijm0v/image/upload/v1688050544/ecommerce/madeToWin_rvsjek.webp"
+          style={{ marginTop: "4rem" }}
+          src="https://res.cloudinary.com/dlncijm0v/image/upload/v1688224490/ecommerce/starNutrition_jzxxxa.jpg"
           alt="made to win"
         />
       </Container>
@@ -48,4 +46,4 @@ const ItemFeaturedContainer = () => {
   );
 };
 
-export default ItemFeaturedContainer;
+export default OffersContainer;

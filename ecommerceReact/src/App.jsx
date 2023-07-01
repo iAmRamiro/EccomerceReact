@@ -3,6 +3,7 @@ import SliderContainer from "./components/common/Slider/SliderContainer";
 import ItemFeaturedContainer from "./components/pages/itemFeatured/ItemFeaturedContainer";
 import { ThemeProvider } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
+import OffersContainer from "./components/pages/offers/OffersContainer";
 
 const theme = createTheme({
   palette: {
@@ -24,6 +25,7 @@ function App() {
         <Navbar />
         <SliderContainer />
         <ItemFeaturedContainer />
+        <OffersContainer />
       </ThemeProvider>
     </>
   );
