@@ -1,14 +1,15 @@
 import { Button } from "@mui/material";
 import React from "react";
 import "./Navbar.css";
+import { NavLink } from "react-router-dom";
 
 const BotonNavbar = ({ nombre, key, path }) => {
   return (
     <Button
       color="inherit"
       key={key}
-      component="a"
-      href={path}
+      component={NavLink}
+      to={path}
       sx={{
         position: "relative",
         "::before": {

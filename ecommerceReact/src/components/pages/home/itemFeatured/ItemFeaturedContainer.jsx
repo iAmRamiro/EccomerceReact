@@ -2,8 +2,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import ItemFeatured from "./ItemFeatured";
 import ItemsFeatured from "./ItemsFeatured";
-import Title from "../../common/title/Title";
-/* import "./itemFeatured.css"; */
+import Title from "../../../common/title/Title";
 import React from "react";
 import { Container } from "@mui/system";
 import Button from "@mui/material/Button";

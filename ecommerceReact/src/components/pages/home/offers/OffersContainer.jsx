@@ -3,7 +3,7 @@ import "react-multi-carousel/lib/styles.css";
 import offersProducts from "./offersProducts";
 import Offers from "./Offers";
 import { Container } from "@mui/material";
-import Title from "../../common/title/Title";
+import Title from "../../../common/title/Title";
 
 const OffersContainer = () => {
   console.log(offersProducts);

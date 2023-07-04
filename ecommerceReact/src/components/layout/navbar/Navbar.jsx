@@ -1,18 +1,6 @@
-import {
-  Button,
-  Drawer,
-  Grid,
-  IconButton,
-  AppBar,
-  Toolbar,
-  Typography,
-  ButtonBase,
-  Box,
-  Badge,
-} from "@mui/material";
+import { Drawer, IconButton, AppBar, Toolbar, Box, Badge } from "@mui/material";
 import React from "react";
 import HomeIcon from "@mui/icons-material/Home";
-import DashboardIcon from "@mui/icons-material/Dashboard";
 import ViewHeadlineIcon from "@mui/icons-material/ViewHeadline";
 import "./Navbar.css";
 import NavListDrawer from "./NavListDrawer";
@@ -27,128 +15,106 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
 import SearchBarNav from "./SearchBarNav";
 
-const navLinks = [
-  {
-    title: "Inicio",
-    path: "#index",
-  },
-  {
-    title: "Productos",
-    path: "#productos",
-  },
-  {
-    title: "Nosotros",
-    path: "#nosotros",
-  },
-
-  {
-    title: "Asesoria",
-    path: "#asesoria",
-  },
-];
-
-export const Navbar = () => {
+export const Navbar = ({ navLinks }) => {
   const [open, setOpen] = React.useState(false);
 
   return (
     <>
-      <header>
+      <Box
+        sx={{
+          display: { xs: "grid", md: "none" },
+          gridTemplateColumns: "repeat(3,1fr)",
+          textAlign: "center",
+          padding: "10px",
+          lineHeight: "12px",
+          letterSpacing: "1px",
+          backgroundColor: "rgba(0, 0, 0, 0.1)",
+          borderLeft: "1px solid rgba(0,0,0,0.1)",
+          borderRight: "1px solid rgba(0,0,0,0.1)",
+        }}
+      >
         <Box
           sx={{
-            display: { xs: "grid", md: "none" },
-            gridTemplateColumns: "repeat(3,1fr)",
-            textAlign: "center",
-            padding: "10px",
-            lineHeight: "12px",
-            letterSpacing: "1px",
-            backgroundColor: "rgba(0, 0, 0, 0.1)",
-            borderLeft: "1px solid rgba(0,0,0,0.1)",
             borderRight: "1px solid rgba(0,0,0,0.1)",
           }}
         >
-          <Box
-            sx={{
-              borderRight: "1px solid rgba(0,0,0,0.1)",
-            }}
-          >
-            <HomeIcon />
-            <h5>HOME</h5>
-          </Box>
-
-          <Box
-            sx={{
-              borderRight: "1px solid rgba(0,0,0,0.1)",
-            }}
-          >
-            <FormatListBulletedIcon />
-            <h5>PRODUCTOS</h5>
-          </Box>
-
-          <Box>
-            <ShoppingCartIcon color="action" />
-            <h5>CARRITO 4</h5>
-          </Box>
+          <HomeIcon />
+          <h5>HOME</h5>
         </Box>
 
-        <p className="envios">Envios a todo el pais 🚚</p>
-        <Box sx={{ display: "flex" }}>
-          <Box
-            item
-            sx={{
-              height: { sx: "8rem" },
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              width: "100%",
-            }}
-          >
-            <img
-              src="https://res.cloudinary.com/dlncijm0v/image/upload/v1687014685/icon_iz6nhm.png"
-              alt="logo"
-            />
-            <h3 style={{ fontSize: "22px" }}>Fitness Everywhere</h3>
-          </Box>
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "1rem",
-              margin: "1rem",
-              cursor: "pointer",
-            }}
-          >
-            <InstagramIcon />
-            <WhatsAppIcon />
-            <FacebookIcon />
-          </Box>
+        <Box
+          sx={{
+            borderRight: "1px solid rgba(0,0,0,0.1)",
+          }}
+        >
+          <FormatListBulletedIcon />
+          <h5>PRODUCTOS</h5>
+        </Box>
+
+        <Box>
+          <ShoppingCartIcon color="action" />
+          <h5>CARRITO 4</h5>
+        </Box>
+      </Box>
+
+      <p className="envios">Envios a todo el pais 🚚</p>
+      <Box sx={{ display: "flex" }}>
+        <Box
+          item
+          sx={{
+            height: { sx: "8rem" },
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            width: "100%",
+          }}
+        >
+          <img
+            src="https://res.cloudinary.com/dlncijm0v/image/upload/v1687014685/icon_iz6nhm.png"
+            alt="logo"
+          />
+          <h3 style={{ fontSize: "22px" }}>Fitness Everywhere</h3>
         </Box>
         <Box
           sx={{
-            display: { xs: "none", md: "flex" },
-            justifyContent: "flex-end",
-            alignItems: "center",
-            gap: "3rem",
-            marginBottom: "1.2rem",
-            marginRight: "1rem",
+            display: "flex",
+            flexDirection: "column",
+            gap: "1rem",
+            margin: "1rem",
             cursor: "pointer",
           }}
         >
-          <Box>
-            <PersonAddIcon />
-            <h5>Crear Cuenta</h5>
-          </Box>
-          <Box>
-            <LoginIcon />
-            <h5>Inicia session</h5>
-          </Box>
-          <Box>
-            <Badge badgeContent={4} color="primary">
-              <ShoppingCartIcon color="action" />
-            </Badge>
-            <h5>$0,000</h5>
-          </Box>
+          <InstagramIcon />
+          <WhatsAppIcon />
+          <FacebookIcon />
         </Box>
-      </header>
+      </Box>
+      <Box
+        sx={{
+          display: { xs: "none", md: "flex" },
+          justifyContent: "flex-end",
+          alignItems: "center",
+          gap: "3rem",
+          marginBottom: "1.2rem",
+          marginRight: "1rem",
+          cursor: "pointer",
+        }}
+      >
+        <Box>
+          <PersonAddIcon />
+          <h5>Crear Cuenta</h5>
+        </Box>
+        <Box>
+          <LoginIcon />
+          <h5>Inicia session</h5>
+        </Box>
+        <Box>
+          <Badge badgeContent={4} color="primary">
+            <ShoppingCartIcon color="action" />
+          </Badge>
+          <h5>$0,000</h5>
+        </Box>
+      </Box>
 
       <AppBar position="static" sx={{ backgroundColor: "#f7f7f7" }}>
         <Toolbar
@@ -207,7 +173,7 @@ export const Navbar = () => {
         onClose={() => setOpen(false)}
         sx={{ display: { sx: "flex", md: "none" }, fontSize: "24px" }}
       >
-        <NavListDrawer navlinks={navLinks} />
+        <NavListDrawer navlinks={navLinks} setOpen={setOpen} />
       </Drawer>
       <SearchBarNav />
     </>
