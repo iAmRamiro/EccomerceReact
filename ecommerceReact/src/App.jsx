@@ -5,8 +5,9 @@ import Footer from "./components/layout/footer/Footer";
 import Home from "./components/pages/home/Home";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Nosotros from "./components/pages/nosotros/Nosotros";
-import ProductosContainer from "./components/pages/productos/ProductosContainer";
 import Asesoria from "./components/pages/asesoria/Asesoria";
+import ItemListContainer from "./components/pages/productos/itemList/ItemListContainer";
+import ItemDetailContainer from "./components/pages/productos/itemDetail/ItemDetailContainer";
 
 const theme = createTheme({
   palette: {
@@ -51,7 +52,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/nosotros" element={<Nosotros />} />
-            <Route path="/productos" element={<ProductosContainer />} />
+            <Route path="/productos" element={<ItemListContainer />} />
+            <Route path="/item/:id" element={<ItemDetailContainer />} />
             <Route path="/asesoria" element={<Asesoria />} />
           </Routes>
 

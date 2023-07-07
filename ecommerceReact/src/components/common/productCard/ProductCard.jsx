@@ -1,4 +1,7 @@
+import { Link } from "react-router-dom";
+import VisibilityIcon from "@mui/icons-material/Visibility";
 import "./productCard.css";
+import { Button } from "@mui/material";
 
 const ProductCard = ({ item }) => {
   return (
@@ -7,10 +10,21 @@ const ProductCard = ({ item }) => {
         <img className="product--image" src={item.img} alt="product image" />
         <h2>{item.title}</h2>
         <p className="price"> ${item.price}</p>
-        <p>{item.description}</p>
-        <p>
-          <button>Añadir al Carrito</button>
-        </p>
+
+        <Link to={`/item/${item.id}`}>
+          <Button
+            variant="contained"
+            startIcon={<VisibilityIcon />}
+            sx={{
+              width: "100%",
+              padding: "10px",
+              transition: "all .2s",
+              ":hover": { opacity: "0.7" },
+            }}
+          >
+            Ver Detalles
+          </Button>
+        </Link>
       </div>
     </div>
   );

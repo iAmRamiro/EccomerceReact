@@ -6,6 +6,7 @@ import Title from "../../../common/title/Title";
 import React from "react";
 import { Container } from "@mui/system";
 import Button from "@mui/material/Button";
+import { Link } from "react-router-dom";
 
 const ItemFeaturedContainer = () => {
   const responsive = {
@@ -33,10 +34,22 @@ const ItemFeaturedContainer = () => {
     <>
       <Container maxWidth="lg" sx={{ textAlign: "center" }}>
         <Title titulo={"Productos Destacados"} />
-        <Carousel showDots={true} responsive={responsive} infinite={true}>
+        <Carousel responsive={responsive} infinite={true}>
           {product}
         </Carousel>
-        <Button variant="contained">Ver Todos los Productos</Button>
+
+        <Link to="/productos">
+          {" "}
+          <Button
+            variant="contained"
+            color="secondary"
+            size="large"
+            sx={{ marginTop: "20px" }}
+          >
+            Ver Todos los Productos
+          </Button>{" "}
+        </Link>
+
         <img
           style={{ width: "1200px", marginTop: "4rem" }}
           src="https://res.cloudinary.com/dlncijm0v/image/upload/v1688050544/ecommerce/madeToWin_rvsjek.webp"
