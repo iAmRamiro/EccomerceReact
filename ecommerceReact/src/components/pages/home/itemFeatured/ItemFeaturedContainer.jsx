@@ -1,14 +1,16 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import ItemFeatured from "./ItemFeatured";
-import ItemsFeatured from "./ItemsFeatured";
 import Title from "../../../common/title/Title";
-import React from "react";
+import React, { useEffect } from "react";
 import { Container } from "@mui/system";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
+import { pedirDatos } from "../../../helper/pedirDatos";
 
 const ItemFeaturedContainer = () => {
+  const [items, setItems] = React.useState([]);
+
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 1024 },
@@ -28,7 +30,15 @@ const ItemFeaturedContainer = () => {
     },
   };
 
-  const product = ItemsFeatured.map((item) => <ItemFeatured item={item} />);
+  useEffect(() => {
+    pedirDatos()
+      .then((res) => setItems(res))
+      .catch((error) => console.error(error));
+  }, []);
+
+  const itemsFeatured = items.filter((item) => item.destacado === true);
+
+  const product = itemsFeatured.map((item) => <ItemFeatured item={item} />);
 
   return (
     <>

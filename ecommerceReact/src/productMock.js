@@ -106,7 +106,7 @@ export const productMock = [
     description:
       "Con la nueva Musculosa Stringer , confeccionada en algodon de alta calidad y con un diseño moderno ,podras dar el 100% en tus entrenamientos y al mismo tiempo lucir tu figura al mejor estilo&nbsp; Fuark.",
 
-    category: "musculosa",
+    category: "musculosas",
 
     img: "https://res.cloudinary.com/dlncijm0v/image/upload/v1687790481/ecommerce/Products/musculosa_xzotzo.webp",
 
@@ -125,11 +125,11 @@ export const productMock = [
     description:
       "Con la nueva Musculosa Stringer , confeccionada en algodon de alta calidad y con un diseño moderno ,podras dar el 100% en tus entrenamientos y al mismo tiempo lucir tu figura al mejor estilo&nbsp; Fuark. ",
 
-    category: "musculosa",
+    category: "musculosas",
 
     img: "https://res.cloudinary.com/dlncijm0v/image/upload/v1688578786/ecommerce/Products/Musculosa_Shark_Negro_qv6n29.webp",
 
-    destacado: true,
+    destacado: false,
   },
 
   {
@@ -144,11 +144,11 @@ export const productMock = [
     description:
       "Con la nueva Musculosa Stringer , confeccionada en algodon de alta calidad y con un diseño moderno ,podras dar el 100% en tus entrenamientos y al mismo tiempo lucir tu figura al mejor estilo&nbsp; Fuark. ",
 
-    category: "musculosa",
+    category: "musculosas",
 
     img: "https://res.cloudinary.com/dlncijm0v/image/upload/v1688578785/ecommerce/Products/Musculosa_Shark_Blanca_hypn5x.webp",
 
-    destacado: true,
+    destacado: false,
   },
 
   {
@@ -163,11 +163,11 @@ export const productMock = [
     description:
       "Con la nueva Musculosa Stringer , confeccionada en algodon de alta calidad y con un diseño moderno ,podras dar el 100% en tus entrenamientos y al mismo tiempo lucir tu figura al mejor estilo&nbsp; Fuark.",
 
-    category: "musculosa",
+    category: "musculosas",
 
     img: "https://res.cloudinary.com/dlncijm0v/image/upload/v1688578785/ecommerce/Products/Musculosa_Shark_Roja_xbq3mv.webp",
 
-    destacado: true,
+    destacado: false,
   },
 
   {
@@ -182,7 +182,7 @@ export const productMock = [
     description:
       "Con la nueva Musculosa Stringer , confeccionada en algodon de alta calidad y con un diseño moderno ,podras dar el 100% en tus entrenamientos y al mismo tiempo lucir tu figura al mejor estilo&nbsp; Fuark. ",
 
-    category: "musculosa",
+    category: "musculosas",
 
     img: "https://res.cloudinary.com/dlncijm0v/image/upload/v1687790481/ecommerce/Products/musculosa2_wswmgp.webp",
   },
@@ -199,7 +199,7 @@ export const productMock = [
     description:
       "Con la nueva Musculosa Stringer , confeccionada en algodon de alta calidad y con un diseño moderno ,podras dar el 100% en tus entrenamientos y al mismo tiempo lucir tu figura al mejor estilo&nbsp; Fuark.",
 
-    category: "musculosa",
+    category: "musculosas",
 
     img: "https://res.cloudinary.com/dlncijm0v/image/upload/v1687790481/ecommerce/Products/musculosa3_dtsgda.webp",
 
@@ -253,7 +253,7 @@ export const productMock = [
     description:
       "&nbsp;es el complemento perfecto para la temporada primavera-verano y que no pueda faltar en tu guardarropa. Confeccionada en algodón, tiene un largo por arriba de la rodilla y es lo suficientemente holgada para acompañar tus movimientos. Con cintura con elástico y cordón, bolsillos laterales ideal para acompañar cualquier look.",
 
-    category: "short",
+    category: "shorts",
 
     img: "https://res.cloudinary.com/dlncijm0v/image/upload/v1688578785/ecommerce/Products/shortFuark_Negro_dcmbdf.webp",
 
@@ -272,7 +272,7 @@ export const productMock = [
     description:
       "es el complemento perfecto para la temporada primavera-verano y que no pueda faltar en tu guardarropa. Confeccionada en algodón, tiene un largo por arriba de la rodilla y es lo suficientemente holgada para acompañar tus movimientos. Con cintura con elástico y cordón, bolsillos laterales ideal para acompañar cualquier look. ",
 
-    category: "short",
+    category: "shorts",
 
     img: "https://res.cloudinary.com/dlncijm0v/image/upload/v1688578785/ecommerce/Products/short_Fuark_Pink_y1ywjt.webp",
 

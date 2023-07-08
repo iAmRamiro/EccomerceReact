@@ -53,6 +53,10 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/nosotros" element={<Nosotros />} />
             <Route path="/productos" element={<ItemListContainer />} />
+            <Route
+              path="/category/:categoryName"
+              element={<ItemListContainer />}
+            />
             <Route path="/item/:id" element={<ItemDetailContainer />} />
             <Route path="/asesoria" element={<Asesoria />} />
           </Routes>

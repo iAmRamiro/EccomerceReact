@@ -1,6 +1,8 @@
 import Title from "../../../common/title/Title";
 import {
   Box,
+  Container,
+  Grid,
   List,
   ListItem,
   ListItemButton,
@@ -10,80 +12,120 @@ import {
 import React, { useEffect } from "react";
 import { pedirDatos } from "../../../helper/pedirDatos";
 import ItemList from "./ItemList";
+import { Link, useParams } from "react-router-dom";
 
 const ItemListContainer = () => {
   const [products, setProducts] = React.useState([]);
+  const [titulo, setTitulo] = React.useState("Todos los Productos");
+
+  const { categoryName } = useParams();
 
   useEffect(() => {
     pedirDatos()
       .then((res) => {
-        setProducts(res);
+        if (categoryName) {
+          setProducts(
+            res.filter((element) => element.category === categoryName)
+          );
+          setTitulo(categoryName);
+        } else {
+          setProducts(res);
+          setTitulo("Todos los Productos");
+        }
       })
       .catch((error) => console.error(error));
-  }, []);
+  }, [categoryName]);
 
   const productos = products.map((item) => (
     <ItemList products={item} key={item.id} />
   ));
 
-  return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Title titulo={"Todos los Productos"} />
-      <Box
-        sx={{
-          display: "grid",
-          gridTemplateColumns: "20% 80%",
-        }}
-      >
-        <Box>
-          <Typography variant="h4">Categorias</Typography>
-          <List>
-            <ListItem disablePadding>
-              <ListItemButton>
-                <ListItemText primary="Remeras" />
-              </ListItemButton>
-            </ListItem>
-            <ListItem disablePadding>
-              <ListItemButton>
-                <ListItemText primary="Musculosas" />
-              </ListItemButton>
-            </ListItem>
-            <ListItem disablePadding>
-              <ListItemButton>
-                <ListItemText primary="Buzos" />
-              </ListItemButton>
-            </ListItem>
-            <ListItem disablePadding>
-              <ListItemButton>
-                <ListItemText primary="Shorts" />
-              </ListItemButton>
-            </ListItem>
-            <ListItem disablePadding>
-              <ListItemButton>
-                <ListItemText primary="Suplementos" />
-              </ListItemButton>
-            </ListItem>
-          </List>
-        </Box>
+  const categories = [
+    {
+      category: "Remeras",
+      path: "/category/remeras",
+    },
 
-        <Box
-          sx={{
-            display: "grid",
-            gridTemplateColumns: "repeat(4,1fr)",
-            paddingRight: "1rem",
-          }}
-        >
-          {productos}
-        </Box>
-      </Box>
-    </Box>
+    {
+      category: "Musculosas",
+      path: "/category/musculosas",
+    },
+
+    {
+      category: "Buzos",
+      path: "/category/buzos",
+    },
+
+    {
+      category: "Shorts",
+      path: "/category/shorts",
+    },
+
+    {
+      category: "Suplementos",
+      path: "/category/Suplementos",
+    },
+
+    {
+      category: "Todos",
+      path: "/productos",
+    },
+  ];
+
+  return (
+    <Container maxWidth="1600px">
+      <Grid container>
+        <Grid item md={2} marginTop={25}>
+          <Box>
+            <Typography
+              variant="h4"
+              sx={{
+                borderBottom: "1px solid rgba(0,0,0,0.2)",
+                paddingBottom: "5px",
+                textTransform: "uppercase",
+                letterSpacing: "6px",
+              }}
+            >
+              Categorias
+            </Typography>
+            <List>
+              {categories.map((category) => (
+                <ListItem disablePadding>
+                  <ListItemButton>
+                    <Link to={category.path} style={{ textDecoration: "none" }}>
+                      <p
+                        style={{
+                          fontWeight: "300",
+                          fontSize: "20px",
+                          color: "black",
+                          lineHeight: "10px",
+                          letterSpacing: "2px",
+                        }}
+                      >
+                        🔴{category.category}
+                      </p>
+                    </Link>
+                  </ListItemButton>
+                </ListItem>
+              ))}
+            </List>
+          </Box>
+        </Grid>
+
+        <Grid item md={10} textAlign={"center"}>
+          <Title titulo={titulo} />
+          <Box
+            sx={{
+              display: "grid",
+              gridTemplateColumns: "repeat(4,1fr)",
+              paddingRight: "1rem",
+            }}
+          >
+            {productos}
+          </Box>
+        </Grid>
+      </Grid>
+    </Container>
   );
 };
 

@@ -1,12 +1,13 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import offersProducts from "./offersProducts";
 import Offers from "./Offers";
 import { Container } from "@mui/material";
 import Title from "../../../common/title/Title";
+import { pedirDatos } from "../../../helper/pedirDatos";
+import { useEffect, useState } from "react";
 
 const OffersContainer = () => {
-  console.log(offersProducts);
+  const [item, setItems] = useState([]);
 
   const responsive = {
     superLargeDesktop: {
@@ -27,7 +28,15 @@ const OffersContainer = () => {
     },
   };
 
-  const offerProducts = offersProducts.map((item) => <Offers item={item} />);
+  useEffect(() => {
+    pedirDatos()
+      .then((res) => setItems(res))
+      .catch((error) => console.error(error));
+  }, []);
+
+  const offers = item.filter((elem) => elem.oferta === true);
+
+  const offerProducts = offers.map((item) => <Offers item={item} />);
 
   return (
     <>
