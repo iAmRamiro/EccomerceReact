@@ -1,0 +1,20 @@
+.imgs {
+  width: 450px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.tituloAsesoria {
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-align: center;
+  font-size: 30px;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.atributos {
+  font-size: 25px;
+  margin-bottom: 10px;
+}

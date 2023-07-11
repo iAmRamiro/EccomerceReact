@@ -3,11 +3,11 @@ import React from "react";
 import "./Navbar.css";
 import { NavLink } from "react-router-dom";
 
-const BotonNavbar = ({ nombre, key, path }) => {
+const BotonNavbar = ({ nombre, path }) => {
   return (
     <Button
       color="inherit"
-      key={key}
+      key={nombre}
       component={NavLink}
       to={path}
       sx={{

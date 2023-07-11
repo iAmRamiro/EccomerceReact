@@ -90,7 +90,7 @@ const Footer = () => {
         <Typography variant="h5">Navegacion</Typography>
         <List>
           {footerLinks.map((item) => (
-            <ListItem disablePadding>
+            <ListItem disablePadding key={item.title}>
               <BotonNavbar
                 nombre={item.title}
                 key={item.title}

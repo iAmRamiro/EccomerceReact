@@ -6,7 +6,6 @@ import {
   List,
   ListItem,
   ListItemButton,
-  ListItemText,
   Typography,
 } from "@mui/material";
 import React, { useEffect } from "react";
@@ -90,7 +89,7 @@ const ItemListContainer = () => {
             </Typography>
             <List>
               {categories.map((category) => (
-                <ListItem disablePadding>
+                <ListItem disablePadding key={category.category}>
                   <ListItemButton>
                     <Link to={category.path} style={{ textDecoration: "none" }}>
                       <p
