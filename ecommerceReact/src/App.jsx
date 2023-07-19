@@ -8,6 +8,13 @@ import Nosotros from "./components/pages/nosotros/Nosotros";
 import Asesoria from "./components/pages/asesoria/Asesoria";
 import ItemListContainer from "./components/pages/productos/itemList/ItemListContainer";
 import ItemDetailContainer from "./components/pages/productos/itemDetail/ItemDetailContainer";
+import GuiaTalles from "./components/pages/guiaTalles/GuiaTalles";
+import PoliticaDeDevolucion from "./components/pages/devolucion/PoliticaDeDevolucion";
+import CompraMayorista from "./components/pages/compraMayorista/CompraMayorista";
+import Contacto from "./components/pages/contacto/Contacto";
+import Login from "./components/pages/login/Login";
+import Register from "./components/pages/register/Register";
+import RegisterContainer from "./components/pages/register/RegisterContainer";
 
 const theme = createTheme({
   palette: {
@@ -59,6 +66,15 @@ function App() {
             />
             <Route path="/item/:id" element={<ItemDetailContainer />} />
             <Route path="/asesoria" element={<Asesoria />} />
+            <Route path="/talles" element={<GuiaTalles />} />
+            <Route
+              path="/politica-de-devolucion"
+              element={<PoliticaDeDevolucion />}
+            />
+            <Route path="/compras-mayoristas" element={<CompraMayorista />} />
+            <Route path="/contacto" element={<Contacto />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<RegisterContainer />} />
           </Routes>
 
           <Footer />

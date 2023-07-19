@@ -1,12 +1,13 @@
 import { Button } from "@mui/material";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const botonContactar = () => {
   return (
     <Button
       color="error"
-      component="a"
-      href="#"
+      component={Link}
+      to="/contacto"
       sx={{
         display: { xs: "none", md: "flex" },
         borderRadius: "2rem",

@@ -2,8 +2,8 @@ import { styled, alpha } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import InputBase from "@mui/material/InputBase";
 import SearchIcon from "@mui/icons-material/Search";
-import BotonNavbar from "./BotonNavbar";
 import { Button } from "@mui/material";
+import { NavLink } from "react-router-dom";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -63,13 +63,29 @@ export default function SearchBarNav() {
           padding: "0",
         }}
       >
-        <Button variant="text" sx={{ color: "black" }}>
+        <Button
+          component={NavLink}
+          to="/compras-mayoristas"
+          variant="text"
+          sx={{ color: "black" }}
+        >
           Compras mayoristas
         </Button>
-        <Button variant="text" sx={{ color: "black" }}>
+        <Button
+          component={NavLink}
+          to="/talles"
+          variant="text"
+          sx={{ color: "black" }}
+        >
           Guia de Talles
         </Button>
-        <Button variant="text" sx={{ color: "black" }}>
+
+        <Button
+          component={NavLink}
+          to="/politica-de-devolucion"
+          variant="text"
+          sx={{ color: "black" }}
+        >
           Politica de devolucion
         </Button>
       </Box>

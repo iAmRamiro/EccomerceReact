@@ -14,6 +14,7 @@ import LoginIcon from "@mui/icons-material/Login";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
 import SearchBarNav from "./SearchBarNav";
+import { Link } from "react-router-dom";
 
 export const Navbar = ({ navLinks }) => {
   const [open, setOpen] = React.useState(false);
@@ -101,12 +102,19 @@ export const Navbar = ({ navLinks }) => {
         }}
       >
         <Box>
-          <PersonAddIcon />
-          <h5>Crear Cuenta</h5>
+          <Link
+            style={{ textDecoration: "none", color: "black" }}
+            to="/register"
+          >
+            <PersonAddIcon />
+            <h5>Crear Cuenta</h5>
+          </Link>
         </Box>
         <Box>
-          <LoginIcon />
-          <h5>Inicia session</h5>
+          <Link style={{ textDecoration: "none", color: "black" }} to="/login">
+            <LoginIcon />
+            <h5>Inicia session</h5>
+          </Link>
         </Box>
         <Box>
           <Badge badgeContent={4} color="primary">
