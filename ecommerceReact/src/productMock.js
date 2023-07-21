@@ -6,7 +6,7 @@ export const productMock = [
 
     price: 15000,
 
-    stock: 2,
+    stock: 5,
 
     description:
       "Nuestra REMERA PERFORMANCE (confeccionada en tela viscosa de alta calidad) es suave al tacto, lo que la convierte en la mejor opción para afrontar todos tus desafíos deportivos. ",
@@ -25,7 +25,7 @@ export const productMock = [
 
     price: 15000,
 
-    stock: 2,
+    stock: 6,
 
     description:
       "Nuestra REMERA PERFORMANCE (confeccionada en tela viscosa de alta calidad) es suave al tacto, lo que la convierte en la mejor opción para afrontar todos tus desafíos deportivos. ",
@@ -44,7 +44,7 @@ export const productMock = [
 
     price: 15000,
 
-    stock: 2,
+    stock: 4,
 
     description:
       "Nuestra REMERA PERFORMANCE (confeccionada en tela viscosa de alta calidad) es suave al tacto, lo que la convierte en la mejor opción para afrontar todos tus desafíos deportivos. ",
@@ -63,7 +63,7 @@ export const productMock = [
 
     price: 15000,
 
-    stock: 2,
+    stock: 3,
 
     description:
       "Nuestras remeras Oversize&nbsp;tienen un corte y diseño personalizado para nuestra propia marca. Esta remera provee el ajuste extra holgado en las mangas, hombros, y pecho. Aportando un aspecto relajado, sutil, y urbano. ",
@@ -82,7 +82,7 @@ export const productMock = [
 
     price: 15000,
 
-    stock: 2,
+    stock: 4,
 
     description:
       "Nuestras remeras Oversize&nbsp;tienen un corte y diseño personalizado para nuestra propia marca. Esta remera provee el ajuste extra holgado en las mangas, hombros, y pecho. Aportando un aspecto relajado, sutil, y urbano. ",
@@ -101,7 +101,7 @@ export const productMock = [
 
     price: 15000,
 
-    stock: 2,
+    stock: 3,
 
     description:
       "Con la nueva Musculosa Stringer , confeccionada en algodon de alta calidad y con un diseño moderno ,podras dar el 100% en tus entrenamientos y al mismo tiempo lucir tu figura al mejor estilo&nbsp; Fuark.",
@@ -358,7 +358,7 @@ export const productMock = [
 
     price: 15000,
 
-    stock: 2,
+    stock: 5,
 
     description: "Descripcion del producto ",
 
@@ -376,7 +376,7 @@ export const productMock = [
 
     price: 15000,
 
-    stock: 2,
+    stock: 5,
 
     description: "Descripcion del producto ",
 

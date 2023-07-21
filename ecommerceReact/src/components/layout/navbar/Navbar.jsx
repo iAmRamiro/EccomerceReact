@@ -15,6 +15,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
 import SearchBarNav from "./SearchBarNav";
 import { Link } from "react-router-dom";
+import CartWidget from "../../common/cartWidget/cartWidget";
 
 export const Navbar = ({ navLinks }) => {
   const [open, setOpen] = React.useState(false);
@@ -117,10 +118,7 @@ export const Navbar = ({ navLinks }) => {
           </Link>
         </Box>
         <Box>
-          <Badge badgeContent={4} color="primary">
-            <ShoppingCartIcon color="action" />
-          </Badge>
-          <h5>$0,000</h5>
+          <CartWidget />
         </Box>
       </Box>
 

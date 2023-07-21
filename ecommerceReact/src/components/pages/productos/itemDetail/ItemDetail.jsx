@@ -8,8 +8,9 @@ import {
 } from "@mui/material";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import React from "react";
+import CounterContainer from "../../../common/counter/CounterContainer";
 
-const ItemDetail = ({ item, talles }) => {
+const ItemDetail = ({ item, talles, agregarAlCarrito, stock }) => {
   return (
     <Container sx={{ marginTop: "4rem" }}>
       <Box sx={{ display: "flex", gap: "3rem" }}>
@@ -76,20 +77,13 @@ const ItemDetail = ({ item, talles }) => {
                 </TextField>
               </div>
             </Box>
-            <Box sx={{ display: "flex", alignContent: "center", gap: "1rem" }}>
-              <TextField
-                variant="outlined"
-                id="outlined-cantidad"
-                label="Cantidad"
-                type="number"
-                InputLabelProps={{
-                  shrink: true,
-                }}
-              />
-
-              <Button variant="contained" size="large">
-                Agregar Al Carrito
-              </Button>
+            <Box>
+              <Box>
+                <CounterContainer
+                  agregarAlCarrito={agregarAlCarrito}
+                  stock={stock}
+                />
+              </Box>
             </Box>
           </Box>
           <br />

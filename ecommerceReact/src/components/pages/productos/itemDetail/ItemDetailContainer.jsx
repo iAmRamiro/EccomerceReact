@@ -8,13 +8,22 @@ const ItemDetailContainer = () => {
 
   const itemID = useParams().id;
 
-  console.log(itemID);
-
   useEffect(() => {
     pedirItemPorID(Number(itemID)).then((res) => {
       setItem(res);
     });
   }, [itemID]);
+
+  console.log(item);
+
+  const agregarAlCarrito = (cantidad) => {
+    let data = {
+      ...item,
+      quantity: cantidad,
+    };
+
+    console.log(data);
+  };
 
   const talles = [
     {
@@ -33,7 +42,18 @@ const ItemDetailContainer = () => {
     },
   ];
 
-  return <div>{item && <ItemDetail item={item} talles={talles} />}</div>;
+  return (
+    <div>
+      {item && (
+        <ItemDetail
+          item={item}
+          talles={talles}
+          agregarAlCarrito={agregarAlCarrito}
+          stock={item.stock}
+        />
+      )}
+    </div>
+  );
 };
 
 export default ItemDetailContainer;
