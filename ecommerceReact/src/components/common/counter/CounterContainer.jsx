@@ -1,8 +1,12 @@
 import React from "react";
 import Counter from "./Counter";
 
-const CounterContainer = ({ agregarAlCarrito, stock }) => {
-  const [counter, setCounter] = React.useState(1);
+const CounterContainer = ({
+  agregarAlCarrito,
+  stock,
+  previousQuantityInCart = 1,
+}) => {
+  const [counter, setCounter] = React.useState(previousQuantityInCart);
 
   const handleSuma = () => {
     counter < stock && setCounter(counter + 1);

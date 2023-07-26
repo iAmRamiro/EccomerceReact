@@ -10,7 +10,13 @@ import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import React from "react";
 import CounterContainer from "../../../common/counter/CounterContainer";
 
-const ItemDetail = ({ item, talles, agregarAlCarrito, stock }) => {
+const ItemDetail = ({
+  item,
+  talles,
+  agregarAlCarrito,
+  stock,
+  previousQuantityInCart,
+}) => {
   return (
     <Container sx={{ marginTop: "4rem" }}>
       <Box sx={{ display: "flex", gap: "3rem" }}>
@@ -82,6 +88,7 @@ const ItemDetail = ({ item, talles, agregarAlCarrito, stock }) => {
                 <CounterContainer
                   agregarAlCarrito={agregarAlCarrito}
                   stock={stock}
+                  previousQuantityInCart={previousQuantityInCart}
                 />
               </Box>
             </Box>

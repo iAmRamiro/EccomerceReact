@@ -1,6 +1,7 @@
 import { ThemeProvider } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
 import { BrowserRouter } from "react-router-dom";
+import CartContextComponent from "./context/CartContext";
 import AppRouter from "./router/AppRouter";
 
 const theme = createTheme({
@@ -21,7 +22,9 @@ function App() {
     <>
       <ThemeProvider theme={theme}>
         <BrowserRouter>
-          <AppRouter />
+          <CartContextComponent>
+            <AppRouter />
+          </CartContextComponent>
         </BrowserRouter>
       </ThemeProvider>
     </>

@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { pedirItemPorID } from "../../../helper/pedirDatos";
+import { CartContext } from "../../../../context/CartContext";
 import ItemDetail from "./ItemDetail";
+import { useContext } from "react";
 
 const ItemDetailContainer = () => {
   const [item, setItem] = useState(null);
-
   const itemID = useParams().id;
+
+  const { addToCart, getQuantityById } = useContext(CartContext);
 
   useEffect(() => {
     pedirItemPorID(Number(itemID)).then((res) => {
@@ -14,16 +17,16 @@ const ItemDetailContainer = () => {
     });
   }, [itemID]);
 
-  console.log(item);
-
   const agregarAlCarrito = (cantidad) => {
     let data = {
       ...item,
       quantity: cantidad,
     };
 
-    console.log(data);
+    addToCart(data);
   };
+
+  let previousQuantityInCart = getQuantityById(itemID);
 
   const talles = [
     {
@@ -50,6 +53,7 @@ const ItemDetailContainer = () => {
           talles={talles}
           agregarAlCarrito={agregarAlCarrito}
           stock={item.stock}
+          previousQuantityInCart={previousQuantityInCart}
         />
       )}
     </div>
