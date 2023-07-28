@@ -14,6 +14,7 @@ import React, { useEffect } from "react";
 import { pedirDatos } from "../../../helper/pedirDatos";
 import ItemList from "./ItemList";
 import { Link, useParams } from "react-router-dom";
+import TrendingFlatIcon from "@mui/icons-material/TrendingFlat";
 
 const ItemListContainer = () => {
   const [products, setProducts] = React.useState([]);
@@ -43,17 +44,17 @@ const ItemListContainer = () => {
     <ItemList products={item} key={item.id} />
   ));
 
-  const skeletons = Array.from(new Array(4), (skeleton) => (
-    <>
-      <Stack spacing={1} key={skeleton}>
+  const skeletons = Array.from(new Array(4), (_, index) => (
+    <React.Fragment key={index}>
+      <Stack spacing={1}>
         <Skeleton variant="rectangular" width={300} height={280} />
         <Skeleton variant="rounded" width={300} height={40} />
       </Stack>
-      <Stack spacing={1} key={skeleton}>
+      <Stack spacing={1}>
         <Skeleton variant="rectangular" width={300} height={280} />
         <Skeleton variant="rounded" width={300} height={40} />
       </Stack>
-    </>
+    </React.Fragment>
   ));
 
   const categories = [
@@ -118,7 +119,7 @@ const ItemListContainer = () => {
                           letterSpacing: "2px",
                         }}
                       >
-                        🔴{category.category}
+                        <TrendingFlatIcon /> {category.category}
                       </p>
                     </Link>
                   </ListItemButton>

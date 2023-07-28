@@ -6,7 +6,7 @@ export const productMock = [
 
     price: 15000,
 
-    stock: 5,
+    stock: 8,
 
     description:
       "Nuestra REMERA PERFORMANCE (confeccionada en tela viscosa de alta calidad) es suave al tacto, lo que la convierte en la mejor opción para afrontar todos tus desafíos deportivos. ",
@@ -63,7 +63,7 @@ export const productMock = [
 
     price: 15000,
 
-    stock: 3,
+    stock: 9,
 
     description:
       "Nuestras remeras Oversize&nbsp;tienen un corte y diseño personalizado para nuestra propia marca. Esta remera provee el ajuste extra holgado en las mangas, hombros, y pecho. Aportando un aspecto relajado, sutil, y urbano. ",
@@ -82,7 +82,7 @@ export const productMock = [
 
     price: 15000,
 
-    stock: 4,
+    stock: 7,
 
     description:
       "Nuestras remeras Oversize&nbsp;tienen un corte y diseño personalizado para nuestra propia marca. Esta remera provee el ajuste extra holgado en las mangas, hombros, y pecho. Aportando un aspecto relajado, sutil, y urbano. ",
@@ -101,7 +101,7 @@ export const productMock = [
 
     price: 15000,
 
-    stock: 3,
+    stock: 10,
 
     description:
       "Con la nueva Musculosa Stringer , confeccionada en algodon de alta calidad y con un diseño moderno ,podras dar el 100% en tus entrenamientos y al mismo tiempo lucir tu figura al mejor estilo&nbsp; Fuark.",
@@ -120,7 +120,7 @@ export const productMock = [
 
     price: 15000,
 
-    stock: 2,
+    stock: 15,
 
     description:
       "Con la nueva Musculosa Stringer , confeccionada en algodon de alta calidad y con un diseño moderno ,podras dar el 100% en tus entrenamientos y al mismo tiempo lucir tu figura al mejor estilo&nbsp; Fuark. ",
@@ -139,7 +139,7 @@ export const productMock = [
 
     price: 15000,
 
-    stock: 2,
+    stock: 10,
 
     description:
       "Con la nueva Musculosa Stringer , confeccionada en algodon de alta calidad y con un diseño moderno ,podras dar el 100% en tus entrenamientos y al mismo tiempo lucir tu figura al mejor estilo&nbsp; Fuark. ",
@@ -177,7 +177,7 @@ export const productMock = [
 
     price: 15000,
 
-    stock: 2,
+    stock: 6,
 
     description:
       "Con la nueva Musculosa Stringer , confeccionada en algodon de alta calidad y con un diseño moderno ,podras dar el 100% en tus entrenamientos y al mismo tiempo lucir tu figura al mejor estilo&nbsp; Fuark. ",
@@ -194,7 +194,7 @@ export const productMock = [
 
     price: 15000,
 
-    stock: 2,
+    stock: 9,
 
     description:
       "Con la nueva Musculosa Stringer , confeccionada en algodon de alta calidad y con un diseño moderno ,podras dar el 100% en tus entrenamientos y al mismo tiempo lucir tu figura al mejor estilo&nbsp; Fuark.",
@@ -220,6 +220,8 @@ export const productMock = [
     category: "buzos",
 
     img: "https://res.cloudinary.com/dlncijm0v/image/upload/v1688578786/ecommerce/Products/buzo_fuark_Verde_t73xaw.webp",
+
+    destacado: false,
   },
 
   {
@@ -229,7 +231,7 @@ export const productMock = [
 
     price: 15000,
 
-    stock: 2,
+    stock: 8,
 
     description:
       "El buzo Swords Black es una prenda de calidad superior diseñada para brindar comodidad y estilo durante la práctica deportiva y el tiempo libre. Confeccionado en 100% algodón doble frisa, este buzo ofrece un tejido suave y transpirable que proporciona una sensación agradable al contacto con la piel. En un elegante color negro, el buzo Swords presenta un corte cómodo, puños y cintura elásticos, y una capucha ajustable, lo que permite una amplia libertad de movimiento y un aspecto moderno y versátil. Ya sea para entrenar o para relajarse, este buzo es el compañero perfecto. ",
@@ -248,7 +250,7 @@ export const productMock = [
 
     price: 15000,
 
-    stock: 2,
+    stock: 6,
 
     description:
       "&nbsp;es el complemento perfecto para la temporada primavera-verano y que no pueda faltar en tu guardarropa. Confeccionada en algodón, tiene un largo por arriba de la rodilla y es lo suficientemente holgada para acompañar tus movimientos. Con cintura con elástico y cordón, bolsillos laterales ideal para acompañar cualquier look.",
@@ -267,7 +269,7 @@ export const productMock = [
 
     price: 15000,
 
-    stock: 2,
+    stock: 8,
 
     description:
       "es el complemento perfecto para la temporada primavera-verano y que no pueda faltar en tu guardarropa. Confeccionada en algodón, tiene un largo por arriba de la rodilla y es lo suficientemente holgada para acompañar tus movimientos. Con cintura con elástico y cordón, bolsillos laterales ideal para acompañar cualquier look. ",
@@ -286,7 +288,7 @@ export const productMock = [
 
     price: 15000,
 
-    stock: 2,
+    stock: 6,
 
     description: "Descripcion del producto ",
 
@@ -304,7 +306,7 @@ export const productMock = [
 
     price: 15000,
 
-    stock: 2,
+    stock: 9,
 
     description: "Descripcion del producto ",
 
@@ -322,7 +324,7 @@ export const productMock = [
 
     price: 15000,
 
-    stock: 2,
+    stock: 8,
 
     description: "Descripcion del producto ",
 
@@ -340,7 +342,7 @@ export const productMock = [
 
     price: 15000,
 
-    stock: 2,
+    stock: 10,
 
     description: "Descripcion del producto ",
 

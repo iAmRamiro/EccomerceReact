@@ -36,7 +36,9 @@ const OffersContainer = () => {
 
   const offers = item.filter((elem) => elem.oferta === true);
 
-  const offerProducts = offers.map((item) => <Offers item={item} />);
+  const offerProducts = offers.map((item) => (
+    <Offers item={item} key={item.id} />
+  ));
 
   return (
     <>

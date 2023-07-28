@@ -23,7 +23,7 @@ const SliderImge = ({
         paddingTop: "1rem",
       }}
     >
-      <Box sx={{ height: "100%", positon: "relative" }}>
+      <Box sx={{ height: "100%", position: "relative" }}>
         <Box>
           <ArrowBackIosIcon sx={leftSwipe} onClick={goToPrevious} />
           <ArrowForwardIosIcon sx={rightSwipe} onClick={goToNext} />
@@ -48,7 +48,7 @@ const SliderImge = ({
           {arrayImagenes.map((slide, slideIndex) => (
             <Box
               key={slideIndex}
-              sx={currentIndex === slideIndex && { color: "Red" }}
+              sx={currentIndex === slideIndex ? { color: "red" } : {}}
               onClick={() => moveDot(slideIndex)}
             >
               {" "}

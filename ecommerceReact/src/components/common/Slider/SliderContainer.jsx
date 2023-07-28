@@ -33,36 +33,34 @@ const SliderContainer = () => {
 
   //styles
 
-  const rightSwipe = {
+  const rightSwipeStyles = {
     position: "absolute",
-    top: "65%",
-    transform: "translate(0,-50%)",
-    right: "19%",
-    fontSize: "45px",
-    zIndex: 1,
+    top: "50%",
+    right: "0",
     cursor: "pointer",
     color: "white",
-    backgroundColor: "rgba(0,0,0,0.2)",
+    fontSize: "24px",
+    zIndex: "1",
+    background: "rgba(0, 0, 0, 0.5)",
   };
 
-  const leftSwipe = {
+  const leftSwipeStyles = {
     position: "absolute",
-    top: "65%",
-    transform: "translate(0,-50%)",
-    left: "19%",
-    fontSize: "45px",
-    zIndex: 1,
+    top: "50%",
+    left: "0",
     cursor: "pointer",
     color: "white",
-    backgroundColor: "rgba(0,0,0,0.2)",
+    fontSize: "24px",
+    zIndex: "1",
+    background: "rgba(0, 0, 0, 0.5)",
   };
 
-  const dotContainer = {
+  const dotContainerStyles = {
+    position: "absolute",
+    bottom: "20px",
+    left: "50%",
+    transform: "translateX(-50%)",
     display: "flex",
-    justifyContent: "center",
-    position: "relative",
-    top: "-5%",
-    gap: "1rem",
   };
 
   return (
@@ -73,9 +71,9 @@ const SliderContainer = () => {
         goToNext={GoToNext}
         goToPrevious={GoToPrevious}
         moveDot={moveDot}
-        rightSwipe={rightSwipe}
-        leftSwipe={leftSwipe}
-        dotContainer={dotContainer}
+        rightSwipe={rightSwipeStyles}
+        leftSwipe={leftSwipeStyles}
+        dotContainer={dotContainerStyles}
       />
     </div>
   );

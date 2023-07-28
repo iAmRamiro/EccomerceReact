@@ -38,7 +38,9 @@ const ItemFeaturedContainer = () => {
 
   const itemsFeatured = items.filter((item) => item.destacado === true);
 
-  const product = itemsFeatured.map((item) => <ItemFeatured item={item} />);
+  const product = itemsFeatured.map((item) => (
+    <ItemFeatured item={item} key={item.id} />
+  ));
 
   return (
     <>

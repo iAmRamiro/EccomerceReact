@@ -8,6 +8,7 @@ import FormControl from "@mui/material/FormControl";
 import TextField from "@mui/material/TextField";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
+
 import { Container } from "@mui/system";
 import Title from "../../common/title/Title";
 import { Button } from "@mui/material";
@@ -134,7 +135,7 @@ export default function Register({
       </Box>
 
       <Box>
-        <p class="mt-4 text-center">
+        <p>
           ¿Ya tenés una cuenta?{" "}
           <Link style={{ color: "black", textDecoration: "none" }} to="/login">
             <b>Inicia Sesion</b>
