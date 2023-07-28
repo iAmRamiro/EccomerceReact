@@ -1,8 +1,15 @@
 import { Button } from "@mui/material";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
+import { useForm } from "react-hook-form";
 
 export default function ContactoFormulario() {
+  const { contact, handleContact } = useForm();
+
+  const sendMessage = () => {
+    console.log("enviado");
+  };
+
   return (
     <Box
       component="form"
@@ -13,6 +20,7 @@ export default function ContactoFormulario() {
       }}
       noValidate
       autoComplete="off"
+      onSubmit={() => handleContact(sendMessage)}
     >
       <Box
         sx={{
@@ -34,6 +42,7 @@ export default function ContactoFormulario() {
             id="outlined-required"
             label="E-MAIL"
             placeholder="Tu correo"
+            name="email"
           />
         </Box>
 
@@ -41,7 +50,8 @@ export default function ContactoFormulario() {
           <TextField
             id="outlined-tel"
             label="TELEFONO (Opcional)"
-            type="tel"
+            type="phone"
+            name="telefono"
             InputLabelProps={{
               shrink: true,
             }}
@@ -54,6 +64,7 @@ export default function ContactoFormulario() {
           fullWidth
           id="outlined"
           label="MENSAJE"
+          name="mensaje"
           placeholder="Ingresa tu mensaje"
           multiline
           rows={6}

@@ -6,6 +6,8 @@ import {
   List,
   ListItem,
   ListItemButton,
+  Skeleton,
+  Stack,
   Typography,
 } from "@mui/material";
 import React, { useEffect } from "react";
@@ -20,23 +22,38 @@ const ItemListContainer = () => {
   const { categoryName } = useParams();
 
   useEffect(() => {
-    pedirDatos()
-      .then((res) => {
-        if (categoryName) {
-          setProducts(
-            res.filter((element) => element.category === categoryName)
-          );
-          setTitulo(categoryName);
-        } else {
-          setProducts(res);
-          setTitulo("Todos los Productos");
-        }
-      })
-      .catch((error) => console.error(error));
+    setTimeout(() => {
+      pedirDatos()
+        .then((res) => {
+          if (categoryName) {
+            setProducts(
+              res.filter((element) => element.category === categoryName)
+            );
+            setTitulo(categoryName);
+          } else {
+            setProducts(res);
+            setTitulo("Todos los Productos");
+          }
+        })
+        .catch((error) => console.error(error));
+    }, 3000);
   }, [categoryName]);
 
   const productos = products.map((item) => (
     <ItemList products={item} key={item.id} />
+  ));
+
+  const skeletons = Array.from(new Array(4), (skeleton) => (
+    <>
+      <Stack spacing={1} key={skeleton}>
+        <Skeleton variant="rectangular" width={300} height={280} />
+        <Skeleton variant="rounded" width={300} height={40} />
+      </Stack>
+      <Stack spacing={1} key={skeleton}>
+        <Skeleton variant="rectangular" width={300} height={280} />
+        <Skeleton variant="rounded" width={300} height={40} />
+      </Stack>
+    </>
   ));
 
   const categories = [
@@ -120,7 +137,7 @@ const ItemListContainer = () => {
               paddingRight: "1rem",
             }}
           >
-            {productos}
+            {products.length > 0 ? productos : skeletons}
           </Box>
         </Grid>
       </Grid>

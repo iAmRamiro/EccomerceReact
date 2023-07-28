@@ -1,4 +1,4 @@
-import { Drawer, IconButton, AppBar, Toolbar, Box, Badge } from "@mui/material";
+import { Drawer, IconButton, AppBar, Toolbar, Box } from "@mui/material";
 import React from "react";
 import HomeIcon from "@mui/icons-material/Home";
 import ViewHeadlineIcon from "@mui/icons-material/ViewHeadline";
@@ -62,7 +62,6 @@ export const Navbar = ({ navLinks }) => {
       <p className="envios">Envios a todo el pais 🚚</p>
       <Box sx={{ display: "flex" }}>
         <Box
-          item
           sx={{
             height: { sx: "8rem" },
             display: "flex",

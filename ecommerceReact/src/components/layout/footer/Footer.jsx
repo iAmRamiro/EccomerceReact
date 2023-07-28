@@ -107,6 +107,7 @@ const Footer = () => {
         </Typography>
         {mediosDePago.map((medio) => (
           <img
+            key={medio.medio}
             src={medio.link}
             alt={medio.medio}
             style={{ width: "40px", padding: "1rem", marginLeft: "1rem" }}

@@ -10,6 +10,7 @@ import Contacto from "../components/pages/contacto/Contacto";
 import Login from "../components/pages/login/Login";
 import RegisterContainer from "../components/pages/register/RegisterContainer";
 import CartContainer from "../components/pages/cart/CartContainer";
+import CheckoutContainer from "../components/pages/checkout/CheckoutContainer";
 
 export const routerMenu = [
   {
@@ -88,5 +89,11 @@ export const routerMenu = [
     id: "carrito",
     path: "/cart",
     Element: CartContainer,
+  },
+
+  {
+    id: "checkout",
+    path: "/checkout",
+    Element: CheckoutContainer,
   },
 ];

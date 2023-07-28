@@ -1,7 +1,17 @@
 import { Button } from "@mui/material";
 import { Box } from "@mui/system";
 
+import { CartContext } from "../../../context/CartContext";
+import { useContext } from "react";
+import { Link } from "react-router-dom";
+
 const CartPurchase = () => {
+  const { getTotalPrice } = useContext(CartContext);
+
+  let total = getTotalPrice();
+
+  let totlaWithIva = total * 1.21;
+
   return (
     <Box
       bgcolor="#ededed"
@@ -21,15 +31,22 @@ const CartPurchase = () => {
           </Box>
 
           <Box sx={{ fontSize: "23px" }}>
-            <p>$200 </p>
-            <p>$200</p>
-            <p>$200</p>
+            <p>${total} </p>
+            <p>21 %</p>
+            <p>${totlaWithIva}</p>
           </Box>
         </Box>
 
-        <Button variant="contained" color="success">
-          Comprar Ahora
-        </Button>
+        <Link to="/checkout">
+          <Button variant="contained" color="success" fullWidth>
+            Iniciar Compra
+          </Button>
+        </Link>
+        <Link to="/productos">
+          <Button variant="contained" fullWidth sx={{ marginTop: "20px" }}>
+            Ver Más Productos
+          </Button>
+        </Link>
       </Box>
     </Box>
   );

@@ -6,7 +6,6 @@ import FilledInput from "@mui/material/FilledInput";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import InputLabel from "@mui/material/InputLabel";
 import InputAdornment from "@mui/material/InputAdornment";
-import FormHelperText from "@mui/material/FormHelperText";
 import FormControl from "@mui/material/FormControl";
 import TextField from "@mui/material/TextField";
 import Visibility from "@mui/icons-material/Visibility";
@@ -15,11 +14,14 @@ import { Button, Container } from "@mui/material";
 import Title from "../../common/title/Title";
 import { Link } from "react-router-dom";
 
-export default function InputAdornments({
-  showPassword,
-  handleClickShowPassword,
-  handleMouseDownPassword,
-}) {
+const Login = () => {
+  const [showPassword, setShowPassword] = React.useState(false);
+
+  const handleClickShowPassword = () => setShowPassword((show) => !show);
+
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault();
+  };
   return (
     <Container
       sx={{
@@ -121,4 +123,6 @@ export default function InputAdornments({
       </Box>
     </Container>
   );
-}
+};
+
+export default Login;
