@@ -1,10 +1,12 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Offers from "./Offers";
-import { Container } from "@mui/material";
+import { Container, Skeleton, Stack } from "@mui/material";
 import Title from "../../../common/title/Title";
 import { pedirDatos } from "../../../helper/pedirDatos";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import { dataBase } from "../../../../firebaseConfig";
+import { collection, where, query, getDocs } from "firebase/firestore";
 
 const OffersContainer = () => {
   const [item, setItems] = useState([]);
@@ -29,15 +31,30 @@ const OffersContainer = () => {
   };
 
   useEffect(() => {
-    pedirDatos()
-      .then((res) => setItems(res))
-      .catch((error) => console.error(error));
+    const productsRef = collection(dataBase, "products");
+
+    const offerProducts = query(productsRef, where("oferta", "==", true));
+
+    getDocs(offerProducts).then((res) =>
+      setItems(
+        res.docs.map((doc) => {
+          return { ...doc.data(), id: doc.id };
+        })
+      )
+    );
   }, []);
 
-  const offers = item.filter((elem) => elem.oferta === true);
-
-  const offerProducts = offers.map((item) => (
+  const offerProducts = item.map((item) => (
     <Offers item={item} key={item.id} />
+  ));
+
+  const skeletons = Array.from(new Array(4), (_, index) => (
+    <React.Fragment key={index}>
+      <Stack spacing={1}>
+        <Skeleton variant="rectangular" width={250} height={200} />
+        <Skeleton variant="rounded" width={250} height={40} />
+      </Stack>
+    </React.Fragment>
   ));
 
   return (
@@ -45,7 +62,7 @@ const OffersContainer = () => {
       <Container maxWidth="lg" sx={{ textAlign: "center" }}>
         <Title titulo={"Ofertas"} />
         <Carousel showDots={true} responsive={responsive} infinite={true}>
-          {offerProducts}
+          {offerProducts.length > 0 ? offerProducts : skeletons}
         </Carousel>
         <img
           style={{ marginTop: "4rem" }}

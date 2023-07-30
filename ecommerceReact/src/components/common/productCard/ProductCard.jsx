@@ -7,8 +7,21 @@ const ProductCard = ({ item }) => {
   return (
     <div style={{ padding: "10px" }}>
       <div className="card">
-        <img className="product--image" src={item.img} alt="product image" />
-        <h2>{item.title}</h2>
+        <img
+          className="product--image"
+          src={item.img}
+          alt="product image"
+          width="400px"
+        />
+        <h2
+          style={{
+            whiteSpace: "nowrap",
+            overflow: "hidden",
+            textoverflow: "ellipsis",
+          }}
+        >
+          {item.title}
+        </h2>
         <p className="price"> ${item.price}</p>
 
         <Link to={`/item/${item.id}`}>

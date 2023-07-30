@@ -3,7 +3,8 @@ import Box from "@mui/material/Box";
 import InputBase from "@mui/material/InputBase";
 import SearchIcon from "@mui/icons-material/Search";
 import { Button } from "@mui/material";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -18,16 +19,6 @@ const Search = styled("div")(({ theme }) => ({
     marginLeft: theme.spacing(1),
     width: "auto",
   },
-}));
-
-const SearchIconWrapper = styled("div")(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: "100%",
-  position: "absolute",
-  pointerEvents: "none",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
@@ -45,6 +36,24 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function SearchBarNav() {
+  const [search, setSearch] = useState("");
+  const navigate = useNavigate();
+
+  const handleSearch = (e) => {
+    setSearch(e.target.value);
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleSearchButtonClick();
+    }
+  };
+
+  const handleSearchButtonClick = () => {
+    // Redireccionar a la ruta de búsqueda con los parámetros de búsqueda
+    navigate(`/busqueda?search=${encodeURIComponent(search)}`);
+  };
+
   return (
     <Box
       sx={{
@@ -90,13 +99,18 @@ export default function SearchBarNav() {
         </Button>
       </Box>
       <Search>
-        <SearchIconWrapper>
-          <SearchIcon />
-        </SearchIconWrapper>
-        <StyledInputBase
-          placeholder="Buscar"
-          inputProps={{ "aria-label": "search" }}
-        />
+        <Box display="flex">
+          <Button onClick={handleSearchButtonClick}>
+            <SearchIcon />
+          </Button>
+          <StyledInputBase
+            value={search}
+            onChange={handleSearch}
+            onKeyDown={handleKeyDown}
+            placeholder="Buscar"
+            inputProps={{ "aria-label": "search" }}
+          />
+        </Box>
       </Search>
     </Box>
   );

@@ -1,4 +1,6 @@
 import { productMock } from "../../productMock";
+import { dataBase } from "../../firebaseConfig";
+import { getDocs, collection } from "firebase/firestore";
 
 export const pedirDatos = () => {
   return new Promise((resolve, reject) => {

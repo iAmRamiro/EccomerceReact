@@ -15,6 +15,8 @@ import { pedirDatos } from "../../../helper/pedirDatos";
 import ItemList from "./ItemList";
 import { Link, useParams } from "react-router-dom";
 import TrendingFlatIcon from "@mui/icons-material/TrendingFlat";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { dataBase } from "../../../../firebaseConfig";
 
 const ItemListContainer = () => {
   const [products, setProducts] = React.useState([]);
@@ -23,21 +25,19 @@ const ItemListContainer = () => {
   const { categoryName } = useParams();
 
   useEffect(() => {
-    setTimeout(() => {
-      pedirDatos()
-        .then((res) => {
-          if (categoryName) {
-            setProducts(
-              res.filter((element) => element.category === categoryName)
-            );
-            setTitulo(categoryName);
-          } else {
-            setProducts(res);
-            setTitulo("Todos los Productos");
-          }
+    const productRef = collection(dataBase, "products");
+
+    const filtrado = categoryName
+      ? query(productRef, where("category", "==", categoryName))
+      : productRef;
+
+    getDocs(filtrado).then((res) => {
+      setProducts(
+        res.docs.map((doc) => {
+          return { ...doc.data(), id: doc.id };
         })
-        .catch((error) => console.error(error));
-    }, 3000);
+      );
+    });
   }, [categoryName]);
 
   const productos = products.map((item) => (

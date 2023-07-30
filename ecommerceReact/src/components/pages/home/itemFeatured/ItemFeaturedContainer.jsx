@@ -7,6 +7,9 @@ import { Container } from "@mui/system";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import { pedirDatos } from "../../../helper/pedirDatos";
+import { dataBase } from "../../../../firebaseConfig";
+import { collection, where, query, getDocs } from "firebase/firestore";
+import { Skeleton, Stack } from "@mui/material";
 
 const ItemFeaturedContainer = () => {
   const [items, setItems] = React.useState([]);
@@ -31,15 +34,30 @@ const ItemFeaturedContainer = () => {
   };
 
   useEffect(() => {
-    pedirDatos()
-      .then((res) => setItems(res))
-      .catch((error) => console.error(error));
+    const prodRef = collection(dataBase, "products");
+
+    const featuredProducts = query(prodRef, where("destacado", "==", true));
+
+    getDocs(featuredProducts).then((res) =>
+      setItems(
+        res.docs.map((doc) => {
+          return { ...doc.data(), id: doc.id };
+        })
+      )
+    );
   }, []);
 
-  const itemsFeatured = items.filter((item) => item.destacado === true);
-
-  const product = itemsFeatured.map((item) => (
+  const product = items.map((item) => (
     <ItemFeatured item={item} key={item.id} />
+  ));
+
+  const skeletons = Array.from(new Array(4), (_, index) => (
+    <React.Fragment key={index}>
+      <Stack spacing={1}>
+        <Skeleton variant="rectangular" width={250} height={200} />
+        <Skeleton variant="rounded" width={250} height={40} />
+      </Stack>
+    </React.Fragment>
   ));
 
   return (
@@ -47,7 +65,7 @@ const ItemFeaturedContainer = () => {
       <Container maxWidth="lg" sx={{ textAlign: "center" }}>
         <Title titulo={"Productos Destacados"} />
         <Carousel responsive={responsive} infinite={true}>
-          {product}
+          {product.length > 0 ? product : skeletons}
         </Carousel>
 
         <Link to="/productos">

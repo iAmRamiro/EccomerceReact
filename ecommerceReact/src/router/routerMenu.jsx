@@ -11,6 +11,8 @@ import Login from "../components/pages/login/Login";
 import RegisterContainer from "../components/pages/register/RegisterContainer";
 import CartContainer from "../components/pages/cart/CartContainer";
 import CheckoutContainer from "../components/pages/checkout/CheckoutContainer";
+import Dashboard from "../components/pages/dashboard/Dashboard";
+import BusquedaContainer from "../components/pages/busqueda/BusquedaContainer";
 
 export const routerMenu = [
   {
@@ -95,5 +97,17 @@ export const routerMenu = [
     id: "checkout",
     path: "/checkout",
     Element: CheckoutContainer,
+  },
+
+  {
+    id: "dashboard",
+    path: "/dashboard",
+    Element: Dashboard,
+  },
+
+  {
+    id: "busqueda",
+    path: "/busqueda",
+    Element: BusquedaContainer,
   },
 ];

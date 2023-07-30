@@ -1,7 +1,5 @@
 export const productMock = [
   {
-    id: 1,
-
     title: "Remera Fuark",
 
     price: 15000,
@@ -19,8 +17,6 @@ export const productMock = [
   },
 
   {
-    id: 2,
-
     title: "Remera Fuark Verde",
 
     price: 15000,
@@ -38,8 +34,6 @@ export const productMock = [
   },
 
   {
-    id: 3,
-
     title: "Remera Fuark Negro",
 
     price: 15000,
@@ -57,8 +51,6 @@ export const productMock = [
   },
 
   {
-    id: 4,
-
     title: "Remera CBUM Blanco",
 
     price: 15000,
@@ -76,8 +68,6 @@ export const productMock = [
   },
 
   {
-    id: 5,
-
     title: "Remera Olympia",
 
     price: 15000,
@@ -95,8 +85,6 @@ export const productMock = [
   },
 
   {
-    id: 6,
-
     title: "Musculosa negra",
 
     price: 15000,
@@ -114,8 +102,6 @@ export const productMock = [
   },
 
   {
-    id: 7,
-
     title: "Musculosa Shark Negra",
 
     price: 15000,
@@ -133,8 +119,6 @@ export const productMock = [
   },
 
   {
-    id: 8,
-
     title: "Musculosa Shark Blanca",
 
     price: 15000,
@@ -152,8 +136,6 @@ export const productMock = [
   },
 
   {
-    id: 9,
-
     title: "Musculosa Shark Roja",
 
     price: 15000,
@@ -171,8 +153,6 @@ export const productMock = [
   },
 
   {
-    id: 10,
-
     title: "Musculosa gris",
 
     price: 15000,
@@ -188,8 +168,6 @@ export const productMock = [
   },
 
   {
-    id: 11,
-
     title: "Musculosa Azul",
 
     price: 15000,
@@ -207,8 +185,6 @@ export const productMock = [
   },
 
   {
-    id: 12,
-
     title: "Buzo Fuark Verde",
 
     price: 15000,
@@ -225,8 +201,6 @@ export const productMock = [
   },
 
   {
-    id: 13,
-
     title: "Buzo Fuark Negro",
 
     price: 15000,
@@ -244,8 +218,6 @@ export const productMock = [
   },
 
   {
-    id: 14,
-
     title: "Short Fuark Negro",
 
     price: 15000,
@@ -263,8 +235,6 @@ export const productMock = [
   },
 
   {
-    id: 15,
-
     title: "Short Fuark Pink",
 
     price: 15000,
@@ -282,8 +252,6 @@ export const productMock = [
   },
 
   {
-    id: 16,
-
     title: "Proteina StarNutrition WHEY PROTEIN sabor vainilla",
 
     price: 15000,
@@ -300,8 +268,6 @@ export const productMock = [
   },
 
   {
-    id: 17,
-
     title: "Creatina Monohidratada  StarNutrition 300grs ",
 
     price: 15000,
@@ -318,8 +284,6 @@ export const productMock = [
   },
 
   {
-    id: 18,
-
     title: "Combo StarNutrition 1 Creatina  + 1 Proteina Vainilla",
 
     price: 15000,
@@ -336,8 +300,6 @@ export const productMock = [
   },
 
   {
-    id: 19,
-
     title: "Combo StarNutrition 1 Creatina + 1 Ganador de peso",
 
     price: 15000,
@@ -354,8 +316,6 @@ export const productMock = [
   },
 
   {
-    id: 20,
-
     title: "Proteina StarNutrition WHEY PROTEIN 100%  Vegana",
 
     price: 15000,
@@ -372,8 +332,6 @@ export const productMock = [
   },
 
   {
-    id: 21,
-
     title: "Aminoacidos MTOR BCCA StarNutrition 270grs",
 
     price: 15000,
