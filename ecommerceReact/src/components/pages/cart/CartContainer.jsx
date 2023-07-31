@@ -23,15 +23,20 @@ const CartContainer = () => {
       ) : (
         <>
           <Grid container>
-            <Grid item xs={12} lg={7} mr="30px">
+            <Grid item xs={12} md={7} mr="20px">
               {productos}
             </Grid>
-            <Grid item xs={12} lg={3}>
+            <Grid item xs={12} md={3}>
               <CartPurchase />
             </Grid>
           </Grid>
 
-          <Button onClick={clearCart} variant="contained" color="secondary">
+          <Button
+            onClick={clearCart}
+            variant="contained"
+            color="secondary"
+            sx={{ marginTop: { xs: "20px", md: "0px" } }}
+          >
             Vaciar Carrito
           </Button>
         </>

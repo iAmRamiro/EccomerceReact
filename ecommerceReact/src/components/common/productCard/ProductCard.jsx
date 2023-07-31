@@ -5,7 +5,7 @@ import { Button } from "@mui/material";
 
 const ProductCard = ({ item }) => {
   return (
-    <div style={{ padding: "10px" }}>
+    <div style={{ padding: "5px" }}>
       <div className="card">
         <img
           className="product--image"

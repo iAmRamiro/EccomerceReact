@@ -21,20 +21,20 @@ const Footer = () => {
   const footerLinks = [
     {
       title: "Inicio",
-      path: "#index",
+      path: "/",
     },
     {
       title: "Productos",
-      path: "#productos",
+      path: "/productos",
     },
     {
       title: "Nosotros",
-      path: "#nosotros",
+      path: "/nosotros",
     },
 
     {
       title: "Asesoria",
-      path: "#asesoria",
+      path: "/asesoria",
     },
   ];
 
@@ -86,7 +86,7 @@ const Footer = () => {
 
   return (
     <Grid container pt={10} pl={2} bgcolor="#f7f7f7" mt={20}>
-      <Grid item xs={12} md={3}>
+      <Grid item xs={12} md={3} textAlign={{ xs: "center", sm: "left" }}>
         <Typography variant="h5">Navegacion</Typography>
         <List>
           {footerLinks.map((item) => (

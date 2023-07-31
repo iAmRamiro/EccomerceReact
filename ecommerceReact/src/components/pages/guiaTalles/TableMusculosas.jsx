@@ -20,7 +20,7 @@ const rows = [
 export default function TableMusculosas() {
   return (
     <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
+      <Table sx={{ minWidth: { xs: 130, sm: 650 } }} aria-label="simple table">
         <TableHead>
           <TableRow
             sx={{

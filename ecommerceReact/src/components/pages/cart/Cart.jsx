@@ -9,8 +9,20 @@ const Cart = ({ prod }) => {
   const { deleteById } = useContext(CartContext);
 
   return (
-    <Box boxShadow="5px 10px 34px -10px rgba(0,0,0,0.57)" mb="50px">
-      <Box display="flex" justifyContent="space-around" alignItems="center">
+    <Box
+      boxShadow="5px 10px 34px -10px rgba(0,0,0,0.57)"
+      mb="50px"
+      width="100%"
+      overflow="hidden"
+      textAlign={{ xs: "center", sm: "start" }}
+    >
+      <Box
+        display="flex"
+        justifyContent="space-around"
+        alignItems="center"
+        alignContent="center"
+        flexDirection={{ xs: "column", sm: "row" }}
+      >
         <Box>
           <img
             src={prod.img}

@@ -6,7 +6,7 @@ const CompraMayorista = () => {
     <Container>
       <Box textAlign={"center"}>
         <Title titulo={"Compras Mayoristas"} />
-        <h2 style={{ fontSize: "4rem", textTransform: "uppercase" }}>
+        <h2 style={{ fontSize: "3.3rem", textTransform: "uppercase" }}>
           Mayoristas
         </h2>
       </Box>

@@ -37,6 +37,8 @@ const ItemListContainer = () => {
           return { ...doc.data(), id: doc.id };
         })
       );
+
+      categoryName ? setTitulo(categoryName) : setTitulo("Todos los productos");
     });
   }, [categoryName]);
 
@@ -90,12 +92,22 @@ const ItemListContainer = () => {
   ];
 
   return (
-    <Container maxWidth="1600px">
+    <Box
+      maxWidth="1700px"
+      margin="0 auto"
+      paddingLeft={{ sm: "30px", md: "0px" }}
+    >
       <Grid container>
-        <Grid item md={2} marginTop={25}>
+        <Grid
+          item
+          sx={{ display: { xs: "none", lg: "block" } }}
+          md={2}
+          marginTop={25}
+          padding={0}
+        >
           <Box>
             <Typography
-              variant="h4"
+              variant="h5"
               sx={{
                 borderBottom: "1px solid rgba(0,0,0,0.2)",
                 paddingBottom: "5px",
@@ -129,20 +141,28 @@ const ItemListContainer = () => {
           </Box>
         </Grid>
 
-        <Grid item md={10} textAlign={"center"}>
-          <Title titulo={titulo} />
+        <Grid item md={10}>
+          <Box sx={{ textAlign: "center" }}>
+            <Title titulo={titulo} />
+          </Box>
           <Box
             sx={{
               display: "grid",
-              gridTemplateColumns: "repeat(4,1fr)",
-              paddingRight: "1rem",
+              gridTemplateColumns: {
+                xs: "1fr",
+                sm: "repeat(2,1fr)",
+                lg: "repeat(3,1fr)",
+                xl: "repeat(4,1fr)",
+              },
+              margin: "0 auto",
+              overflow: "hidden",
             }}
           >
             {products.length > 0 ? productos : skeletons}
           </Box>
         </Grid>
       </Grid>
-    </Container>
+    </Box>
   );
 };
 

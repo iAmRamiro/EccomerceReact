@@ -57,7 +57,6 @@ export default function Register({
             <TextField
               required
               fullWidth
-              id="outlined-required"
               label="E-MAIL"
               placeholder="Tu correo"
             />
@@ -66,7 +65,6 @@ export default function Register({
           <Box sx={{ width: "100%" }}>
             <TextField
               fullWidth
-              id="outlined-tel"
               label="TELEFONO (Opcional)"
               type="tel"
               InputLabelProps={{
@@ -106,7 +104,7 @@ export default function Register({
                 REPETIR CONTRASEÑA
               </InputLabel>
               <OutlinedInput
-                id="outlined-adornment-password"
+                id="outlined-adornment-password-repeat"
                 type={showPassword ? "text" : "password"}
                 endAdornment={
                   <InputAdornment position="end">

@@ -1,23 +1,31 @@
 import Title from "../../common/title/Title";
 import React from "react";
-import { Box, Container } from "@mui/system";
+import { Box } from "@mui/system";
 import { Grid } from "@mui/material";
 
 const Nosotros = () => {
   return (
-    <Container sx={{ textAlign: "center" }} maxWidth="xl">
+    <Box sx={{ textAlign: "center" }} maxWidth="xl" margin="0 auto">
       <Title titulo={"Sobre Nosotros"} />
       <Grid container>
-        <Grid item md={6}>
-          <img
-            src="https://res.cloudinary.com/dlncijm0v/image/upload/v1688828150/nosotros_wbrn5y.jpg"
-            alt="nosotros"
-            width="600px"
-            style={{ borderRadius: "10px" }}
-          />
+        <Grid item xs={12} md={6} margin="0 auto">
+          <Box
+            sx={{
+              backgroundImage:
+                "url(https://res.cloudinary.com/dlncijm0v/image/upload/v1688828150/nosotros_wbrn5y.jpg)",
+              backgroundPosition: "center",
+              width: { xs: "300px", sm: "600px" },
+              height: { xs: "300px", sm: "600px" },
+              backgroundSize: "cover",
+              objectFit: "contain",
+              margin: "0 auto",
+              marginTop: "50px",
+              borderRadius: "10px",
+            }}
+          ></Box>
         </Grid>
 
-        <Grid item md={6}>
+        <Grid item xs={12} md={6}>
           <h2 style={{ fontSize: "30px", fontFamily: "monospace" }}>
             WORLD FITNESS
           </h2>
@@ -49,7 +57,7 @@ const Nosotros = () => {
           ></iframe>
         </Grid>
       </Grid>
-    </Container>
+    </Box>
   );
 };
 

@@ -17,9 +17,14 @@ import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
 import SearchBarNav from "./SearchBarNav";
 import { Link } from "react-router-dom";
 import CartWidget from "../../common/cartWidget/cartWidget";
+import ProductDrawer from "./ProductDrawer";
 
 export const Navbar = ({ navLinks }) => {
   const [open, setOpen] = React.useState(false);
+  const [openProducts, setOpenProducts] = React.useState(false);
+  const handleDrowerOpen = () => {
+    setOpenProducts(true);
+  };
 
   return (
     <>
@@ -41,22 +46,32 @@ export const Navbar = ({ navLinks }) => {
             borderRight: "1px solid rgba(0,0,0,0.1)",
           }}
         >
-          <HomeIcon />
-          <h5>HOME</h5>
+          <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+            <HomeIcon />
+            <h5>HOME</h5>
+          </Link>
         </Box>
 
         <Box
           sx={{
             borderRight: "1px solid rgba(0,0,0,0.1)",
+            cursor: "pointer",
           }}
+          onClick={handleDrowerOpen}
         >
-          <FormatListBulletedIcon />
-          <h5>PRODUCTOS</h5>
+          <Link
+            to="/productos"
+            style={{ textDecoration: "none", color: "black" }}
+          >
+            <FormatListBulletedIcon />
+            <h5>PRODUCTOS</h5>
+          </Link>
         </Box>
 
         <Box>
-          <ShoppingCartIcon color="action" />
-          <h5>CARRITO 4</h5>
+          <Link to="/cart" style={{ textDecoration: "none", color: "black" }}>
+            <CartWidget color="action" />
+          </Link>
         </Box>
       </Box>
 
@@ -174,12 +189,20 @@ export const Navbar = ({ navLinks }) => {
       </AppBar>
 
       <Drawer
-        open={open}
         anchor="left"
+        open={open}
         onClose={() => setOpen(false)}
-        sx={{ display: { sx: "flex", md: "none" }, fontSize: "24px" }}
+        sx={{ display: { xs: "flex", md: "none" }, fontSize: "24px" }}
       >
         <NavListDrawer navlinks={navLinks} setOpen={setOpen} />
+      </Drawer>
+
+      <Drawer
+        anchor="top"
+        open={openProducts}
+        onClose={() => setOpenProducts(false)}
+      >
+        <ProductDrawer setOpen={setOpenProducts} />
       </Drawer>
       <SearchBarNav />
     </>

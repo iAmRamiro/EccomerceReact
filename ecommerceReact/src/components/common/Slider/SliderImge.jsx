@@ -17,8 +17,8 @@ const SliderImge = ({
   return (
     <Box
       sx={{
-        width: "1200px",
-        height: "600px",
+        width: { xs: "100%", lg: "1200px" },
+        height: { xs: "300px", lg: "600px" },
         margin: "0 auto",
         paddingTop: "1rem",
       }}

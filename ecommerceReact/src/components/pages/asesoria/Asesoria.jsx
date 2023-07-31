@@ -14,8 +14,14 @@ const Asesoria = () => {
 
       <Box>
         <Grid container>
-          <Grid item md={4}>
-            <Box>
+          <Grid item xs={12} md={4} mb={6}>
+            <Box
+              display="flex"
+              justifyContent="center"
+              flexDirection="column"
+              alignContent="center"
+              alignItems="center"
+            >
               <img
                 className="imgs"
                 src="https://res.cloudinary.com/dlncijm0v/image/upload/v1689084746/platino_eqdtvs.png"
@@ -36,8 +42,14 @@ const Asesoria = () => {
               </Button>
             </Box>
           </Grid>
-          <Grid item md={4}>
-            <Box>
+          <Grid item xs={12} md={4} mb={6}>
+            <Box
+              display="flex"
+              justifyContent="center"
+              flexDirection="column"
+              alignContent="center"
+              alignItems="center"
+            >
               <img
                 className="imgs"
                 src="https://res.cloudinary.com/dlncijm0v/image/upload/v1689084744/premiun_ntj5qm.jpg"
@@ -58,8 +70,14 @@ const Asesoria = () => {
               </Button>
             </Box>
           </Grid>
-          <Grid item md={4}>
-            <Box>
+          <Grid item xs={12} md={4}>
+            <Box
+              display="flex"
+              justifyContent="center"
+              flexDirection="column"
+              alignContent="center"
+              alignItems="center"
+            >
               <img
                 className="imgs"
                 src="https://res.cloudinary.com/dlncijm0v/image/upload/v1689084743/premiun_trimestral_chjjkt.jpg"

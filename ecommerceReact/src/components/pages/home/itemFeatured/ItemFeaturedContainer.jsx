@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import { pedirDatos } from "../../../helper/pedirDatos";
 import { dataBase } from "../../../../firebaseConfig";
 import { collection, where, query, getDocs } from "firebase/firestore";
-import { Skeleton, Stack } from "@mui/material";
+import { Box, Skeleton, Stack } from "@mui/material";
 
 const ItemFeaturedContainer = () => {
   const [items, setItems] = React.useState([]);
@@ -79,13 +79,21 @@ const ItemFeaturedContainer = () => {
             Ver Todos los Productos
           </Button>{" "}
         </Link>
-
-        <img
-          style={{ width: "1200px", marginTop: "4rem" }}
-          src="https://res.cloudinary.com/dlncijm0v/image/upload/v1688050544/ecommerce/madeToWin_rvsjek.webp"
-          alt="made to win"
-        />
       </Container>
+      <Box
+        sx={{
+          backgroundImage:
+            "url(https://res.cloudinary.com/dlncijm0v/image/upload/v1688050544/ecommerce/madeToWin_rvsjek.webp)",
+          backgroundPosition: "center",
+          width: { xs: "100%", lg: "1200px" },
+          height: { xs: "300px", lg: "600px" },
+          backgroundSize: "cover",
+          objectFit: "contain",
+          margin: "0 auto",
+          marginTop: "50px",
+          borderRadius: "10px",
+        }}
+      ></Box>
     </>
   );
 };

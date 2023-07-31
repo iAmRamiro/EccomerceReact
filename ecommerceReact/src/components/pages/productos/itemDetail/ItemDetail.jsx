@@ -1,11 +1,4 @@
-import {
-  Box,
-  Button,
-  Container,
-  MenuItem,
-  TextField,
-  Typography,
-} from "@mui/material";
+import { Box, Container, MenuItem, TextField, Typography } from "@mui/material";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import React from "react";
 import CounterContainer from "../../../common/counter/CounterContainer";
@@ -19,13 +12,20 @@ const ItemDetail = ({
 }) => {
   return (
     <Container sx={{ marginTop: "4rem" }}>
-      <Box sx={{ display: "flex", gap: "3rem" }}>
+      <Box
+        sx={{
+          display: "flex",
+          gap: "3rem",
+          flexDirection: { xs: "column", sm: "row" },
+          alignItems: { xs: "center", sm: "normal" },
+        }}
+      >
         <Box>
-          <img src={item.img} />
+          <img src={item.img} width="350px" />
         </Box>
 
         <Box>
-          <Typography variant="h3">{item.title}</Typography>
+          <Typography variant="h4">{item.title}</Typography>
           <Typography variant="h5" mt={2} mb={2}>
             {" "}
             ${item.price}

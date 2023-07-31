@@ -1,7 +1,7 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Offers from "./Offers";
-import { Container, Skeleton, Stack } from "@mui/material";
+import { Box, Container, Skeleton, Stack } from "@mui/material";
 import Title from "../../../common/title/Title";
 import { pedirDatos } from "../../../helper/pedirDatos";
 import React, { useEffect, useState } from "react";
@@ -64,12 +64,21 @@ const OffersContainer = () => {
         <Carousel showDots={true} responsive={responsive} infinite={true}>
           {offerProducts.length > 0 ? offerProducts : skeletons}
         </Carousel>
-        <img
-          style={{ marginTop: "4rem" }}
-          src="https://res.cloudinary.com/dlncijm0v/image/upload/v1688224490/ecommerce/starNutrition_jzxxxa.jpg"
-          alt="made to win"
-        />
       </Container>
+      <Box
+        sx={{
+          backgroundImage:
+            "url(https://res.cloudinary.com/dlncijm0v/image/upload/v1688224490/ecommerce/starNutrition_jzxxxa.jpg)",
+          backgroundPosition: "center",
+          width: { xs: "100%", lg: "1000px" },
+          height: { xs: "250px", lg: "400px" },
+          backgroundSize: "cover",
+          objectFit: "cover",
+          margin: "0 auto",
+          marginTop: "50px",
+          borderRadius: "10px",
+        }}
+      ></Box>
     </>
   );
 };
