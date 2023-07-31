@@ -22,8 +22,9 @@ const CartContextComponent = ({ children }) => {
       localStorage.setItem("cart", JSON.stringify(newArray));
       setCart(newArray);
     } else {
-      localStorage.setItem("cart", JSON.stringify(newArray));
-      setCart([...cart, producto]);
+      const updatedCart = [...cart, producto];
+      localStorage.setItem("cart", JSON.stringify(updatedCart));
+      setCart(updatedCart);
     }
   };
 

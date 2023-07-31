@@ -1,63 +1,38 @@
-import { Box, List, ListItem, ListItemButton } from "@mui/material";
+import { Box, Button, List, ListItem, ListItemButton } from "@mui/material";
 import { NavLink } from "react-router-dom";
+import { navProductsDrawer } from "../navlinks";
+import TrendingFlatIcon from "@mui/icons-material/TrendingFlat";
 
 const ProductDrawer = ({ setOpen }) => {
-  const categories = [
-    {
-      category: "Remeras",
-      path: "/category/remeras",
-    },
-
-    {
-      category: "Musculosas",
-      path: "/category/musculosas",
-    },
-
-    {
-      category: "Buzos",
-      path: "/category/buzos",
-    },
-
-    {
-      category: "Shorts",
-      path: "/category/shorts",
-    },
-
-    {
-      category: "Suplementos",
-      path: "/category/Suplementos",
-    },
-
-    {
-      category: "Todos",
-      path: "/productos",
-    },
-  ];
-
   return (
     <Box
       sx={{
         width: "100%",
+        height: "50vh",
         bgcolor: "black",
         color: "white",
         fontSize: "1.4rem",
       }}
     >
-      <List>
-        {categories.map((element) => (
-          <ListItem key={element.category}>
-            <ListItemButton
+      <List sx={{ marginTop: "35px" }}>
+        {navProductsDrawer.map((element) => (
+          <ListItem disablePadding key={element.category}>
+            <Button
+              variant="contained"
+              fullWidth
               component={NavLink}
               to={element.path}
+              key={element.category}
               onClick={() => setOpen(false)}
               sx={{
                 color: "white",
-                fontSize: "1.4rem",
-                "&.Mui-selected": { backgroundColor: "blue" },
+                fontSize: "1.2rem",
+                marginBottom: "25px",
+                borderRadius: "1rem",
               }}
             >
-              {element.category}
-            </ListItemButton>
+              <TrendingFlatIcon /> {element.category}
+            </Button>
           </ListItem>
         ))}
       </List>

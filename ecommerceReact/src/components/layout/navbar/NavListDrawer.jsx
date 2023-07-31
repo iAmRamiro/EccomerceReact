@@ -1,16 +1,17 @@
-import { Box, List, ListItem, ListItemButton } from "@mui/material";
-import BotonNavbar from "./BotonNavbar";
+import { Box, Button, List, ListItem } from "@mui/material";
 import { NavLink } from "react-router-dom";
+import { navLinksDrawer } from "../navlinks";
 
-const NavListDrawer = ({ navlinks, setOpen }) => {
+import TrendingFlatIcon from "@mui/icons-material/TrendingFlat";
+
+const NavListDrawer = ({ setOpen }) => {
   return (
     <Box
       sx={{
         width: "50vw",
         height: "100%",
         bgcolor: "black",
-        color: "white",
-        fontSize: "1.7rem",
+
         padding: "10px",
         display: "flex",
         alignItems: "center",
@@ -18,23 +19,40 @@ const NavListDrawer = ({ navlinks, setOpen }) => {
     >
       <nav>
         <List>
-          {navlinks.map((element) => (
-            <ListItem disablePadding>
-              <ListItemButton
+          {navLinksDrawer.map((element) => (
+            <ListItem disablePadding key={element.title}>
+              <Button
+                variant="contained"
+                fullWidth
                 component={NavLink}
                 to={element.path}
                 key={element.title}
                 onClick={() => setOpen(false)}
                 sx={{
                   color: "white",
-                  fontSize: "1.9rem",
-                  "&.Mui-selected": { backgroundColor: "blue" },
+                  fontSize: "1.2rem",
+                  marginBottom: "25px",
+                  borderRadius: "1rem",
                 }}
               >
-                {element.title}
-              </ListItemButton>
+                <TrendingFlatIcon /> {element.title}
+              </Button>
             </ListItem>
           ))}
+          <Button
+            onClick={() => setOpen(false)}
+            component={NavLink}
+            to="/contacto"
+            variant="contained"
+            color="secondary"
+            fullWidth
+            sx={{
+              borderRadius: "2rem",
+              padding: "9px 9px",
+            }}
+          >
+            Contactar
+          </Button>
         </List>
       </nav>
     </Box>

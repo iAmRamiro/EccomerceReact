@@ -69,9 +69,7 @@ export const Navbar = ({ navLinks }) => {
         </Box>
 
         <Box>
-          <Link to="/cart" style={{ textDecoration: "none", color: "black" }}>
-            <CartWidget color="action" />
-          </Link>
+          <CartWidget color="action" />
         </Box>
       </Box>
 
@@ -194,7 +192,7 @@ export const Navbar = ({ navLinks }) => {
         onClose={() => setOpen(false)}
         sx={{ display: { xs: "flex", md: "none" }, fontSize: "24px" }}
       >
-        <NavListDrawer navlinks={navLinks} setOpen={setOpen} />
+        <NavListDrawer setOpen={setOpen} />
       </Drawer>
 
       <Drawer

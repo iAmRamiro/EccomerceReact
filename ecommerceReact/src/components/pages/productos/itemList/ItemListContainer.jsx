@@ -1,7 +1,6 @@
 import Title from "../../../common/title/Title";
 import {
   Box,
-  Container,
   Grid,
   List,
   ListItem,
@@ -11,7 +10,7 @@ import {
   Typography,
 } from "@mui/material";
 import React, { useEffect } from "react";
-import { pedirDatos } from "../../../helper/pedirDatos";
+
 import ItemList from "./ItemList";
 import { Link, useParams } from "react-router-dom";
 import TrendingFlatIcon from "@mui/icons-material/TrendingFlat";
