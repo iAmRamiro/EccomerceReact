@@ -34,6 +34,7 @@ const Cart = ({ prod }) => {
         <Box maxWidth="420px">
           <h2>{prod.title}</h2>
           <p>${prod.price}</p>
+          <p>{prod.talle && `Talle: ${prod.talle}`}</p>
           <IconButton
             aria-label="delete"
             size="small"

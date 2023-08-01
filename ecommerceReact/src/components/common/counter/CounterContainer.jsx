@@ -5,6 +5,7 @@ const CounterContainer = ({
   agregarAlCarrito,
   stock,
   previousQuantityInCart = 1,
+  talle,
 }) => {
   const [counter, setCounter] = React.useState(previousQuantityInCart);
 
@@ -20,6 +21,7 @@ const CounterContainer = ({
     <>
       <Counter
         counter={counter}
+        talle={talle}
         sumar={handleSuma}
         restar={handleResta}
         agregarAlCarrito={agregarAlCarrito}

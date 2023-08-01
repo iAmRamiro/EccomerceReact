@@ -3,7 +3,7 @@ import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import React from "react";
 
-const Counter = ({ counter, sumar, restar, agregarAlCarrito }) => {
+const Counter = ({ counter, sumar, restar, agregarAlCarrito, talle }) => {
   return (
     <Box>
       <Box sx={{ display: "flex" }}>
@@ -36,7 +36,7 @@ const Counter = ({ counter, sumar, restar, agregarAlCarrito }) => {
         <Button
           variant="contained"
           size="large"
-          onClick={() => agregarAlCarrito(counter)}
+          onClick={() => agregarAlCarrito(counter, talle)}
         >
           Agregar Al Carrito
         </Button>

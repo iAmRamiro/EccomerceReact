@@ -7,11 +7,42 @@ import Title from "../../common/title/Title";
 import Cart from "./Cart";
 import CartPurchase from "./CartPurchase";
 import EmptyCard from "./EmptyCard";
+import Swal from "sweetalert2";
 
 const CartContainer = () => {
   const { cart, clearCart } = useContext(CartContext);
 
-  const productos = cart.map((prod) => <Cart prod={prod} key={prod.key} />);
+  const limpiar = () => {
+    const swalWithMuiButtons = Swal.mixin({
+      customClass: {
+        confirmButton: "btn btn-success",
+        cancelButton: "btn btn-danger",
+      },
+    });
+
+    swalWithMuiButtons
+      .fire({
+        title: "¿Seguro quieres vaciar tu carrito?",
+        text: "No podrás revertir los cambios.",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Vaciar",
+        cancelButtonText: "No vaciar",
+        reverseButtons: true,
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          swalWithMuiButtons.fire(
+            "Vaciado!",
+            "Se eliminaron productos del Carrito",
+            "success"
+          );
+          clearCart();
+        }
+      });
+  };
+
+  const productos = cart.map((prod) => <Cart prod={prod} key={prod.id} />);
 
   return (
     <Container maxWidth="xl">
@@ -32,7 +63,7 @@ const CartContainer = () => {
           </Grid>
 
           <Button
-            onClick={clearCart}
+            onClick={limpiar}
             variant="contained"
             color="secondary"
             sx={{ marginTop: { xs: "20px", md: "0px" } }}

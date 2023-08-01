@@ -5,13 +5,17 @@ import ItemDetail from "./ItemDetail";
 import { useContext } from "react";
 import { doc, getDoc } from "firebase/firestore";
 import { dataBase } from "../../../../firebaseConfig";
-import { Box, Skeleton, Stack } from "@mui/material";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
+import { Box, Skeleton } from "@mui/material";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ItemDetailContainer = () => {
   const [item, setItem] = useState(null);
   const itemID = useParams().id;
+  const [selectedTalle, setSelectedTalle] = useState("");
+  const handleTalleChange = (event) => {
+    setSelectedTalle(event.target.value);
+  };
 
   const { addToCart, getQuantityById } = useContext(CartContext);
 
@@ -23,13 +27,41 @@ const ItemDetailContainer = () => {
     });
   }, [itemID]);
 
-  const agregarAlCarrito = (cantidad) => {
+  const agregarAlCarrito = (cantidad, talle) => {
+    if (item.requiereTalle && !talle) {
+      toast.error("Debes seleccionar un talle antes de agregar al carrito.", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+      return;
+    }
+
     let data = {
       ...item,
       quantity: cantidad,
     };
 
+    if (item.requiereTalle) {
+      data.talle = talle;
+    }
     addToCart(data);
+
+    toast.success("Se añadio al carrito!", {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
   };
 
   let previousQuantityInCart = getQuantityById(itemID);
@@ -73,7 +105,7 @@ const ItemDetailContainer = () => {
   ];
 
   return (
-    <div>
+    <>
       {item === null ? (
         skeletons
       ) : (
@@ -83,9 +115,13 @@ const ItemDetailContainer = () => {
           agregarAlCarrito={agregarAlCarrito}
           stock={item.stock}
           previousQuantityInCart={previousQuantityInCart}
+          selectedTalle={selectedTalle}
+          handleTalleChange={handleTalleChange}
         />
       )}
-    </div>
+
+      <ToastContainer />
+    </>
   );
 };
 

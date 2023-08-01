@@ -9,6 +9,8 @@ const ItemDetail = ({
   agregarAlCarrito,
   stock,
   previousQuantityInCart,
+  selectedTalle,
+  handleTalleChange,
 }) => {
   return (
     <Container sx={{ marginTop: "4rem" }}>
@@ -65,27 +67,31 @@ const ItemDetail = ({
               noValidate
               autoComplete="off"
             >
-              <div>
-                <TextField
-                  variant="standard"
-                  id="outlined"
-                  select
-                  label="Talle"
-                  aria-required
-                  defaultValue="-SELECCIONA-"
-                  helperText="selecciona tu talle"
-                >
-                  {talles.map((tall) => (
-                    <MenuItem key={tall.codigo} value={tall.talle}>
-                      {tall.talle}
-                    </MenuItem>
-                  ))}
-                </TextField>
-              </div>
+              {item.requiereTalle && (
+                <Box>
+                  <TextField
+                    variant="standard"
+                    id="outlined"
+                    select
+                    label="Talle"
+                    value={selectedTalle}
+                    onChange={handleTalleChange}
+                    required
+                    helperText="selecciona tu talle"
+                  >
+                    {talles.map((tall) => (
+                      <MenuItem key={tall.codigo} value={tall.talle}>
+                        {tall.talle}
+                      </MenuItem>
+                    ))}
+                  </TextField>
+                </Box>
+              )}
             </Box>
             <Box>
               <Box>
                 <CounterContainer
+                  talle={selectedTalle}
                   agregarAlCarrito={agregarAlCarrito}
                   stock={stock}
                   previousQuantityInCart={previousQuantityInCart}

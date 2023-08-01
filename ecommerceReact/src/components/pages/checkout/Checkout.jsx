@@ -9,6 +9,7 @@ import { useFormik } from "formik";
 import { useContext } from "react";
 import { CartContext } from "../../../context/CartContext";
 import { dataBase } from "../../../firebaseConfig";
+import Swal from "sweetalert2";
 
 import {
   collection,
@@ -21,7 +22,7 @@ import {
 import * as Yup from "yup";
 
 const Checkout = () => {
-  const { cart, getTotalPrice } = useContext(CartContext);
+  const { cart, getTotalPrice, clearCart } = useContext(CartContext);
 
   const [idOrder, setidOrder] = useState("");
 
@@ -37,6 +38,13 @@ const Checkout = () => {
     },
 
     onSubmit: (data) => {
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Revisa tu correo! para seguir con la compra",
+        showConfirmButton: true,
+      });
+
       let order = {
         buyer: data,
         item: cart,
@@ -57,6 +65,8 @@ const Checkout = () => {
           stock: element.stock - element.quantity,
         })
       );
+
+      clearCart();
     },
 
     validationSchema: Yup.object({
