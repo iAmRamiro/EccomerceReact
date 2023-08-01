@@ -1,4 +1,3 @@
-import Home from "../components/pages/home/Home";
 import Asesoria from "../components/pages/asesoria/Asesoria";
 import Nosotros from "../components/pages/nosotros/Nosotros";
 import ItemListContainer from "../components/pages/productos/itemList/ItemListContainer";
@@ -13,6 +12,7 @@ import CartContainer from "../components/pages/cart/CartContainer";
 import CheckoutContainer from "../components/pages/checkout/CheckoutContainer";
 import Dashboard from "../components/pages/dashboard/Dashboard";
 import BusquedaContainer from "../components/pages/busqueda/BusquedaContainer";
+import Home from "../components/pages/home/Home";
 
 export const routerMenu = [
   {
